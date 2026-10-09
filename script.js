@@ -114,21 +114,80 @@ function openLessons(subject) {
   area.scrollIntoView({behavior:"smooth", block:"start"});
 }
 function closeLessons() { document.getElementById("lessonArea").hidden = true; }
-function checkQuiz() {
-  const answer = document.querySelector('input[name="q1"]:checked');
+const quizBank = {
+  computer: [
+    {q:"What is the full form of CPU?", options:["Central Processing Unit","Computer Personal Unit","Central Program Utility","Control Power Unit"], answer:0},
+    {q:"Which device is mainly used to type text?", options:["Monitor","Keyboard","Speaker","Printer"], answer:1},
+    {q:"Which one is an output device?", options:["Mouse","Microphone","Monitor","Scanner"], answer:2}
+  ],
+  science: [
+    {q:"Which planet is known as the Red Planet?", options:["Venus","Mars","Jupiter","Mercury"], answer:1},
+    {q:"What do plants absorb from the air for photosynthesis?", options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"], answer:2},
+    {q:"At sea level, water normally boils at what temperature?", options:["50°C","75°C","100°C","150°C"], answer:2}
+  ],
+  math: [
+    {q:"What is 12 × 8?", options:["84","96","108","88"], answer:1},
+    {q:"What is 1/4 + 2/4?", options:["3/4","3/8","2/4","1/2"], answer:0},
+    {q:"Which number is an even number?", options:["13","21","34","45"], answer:2}
+  ],
+  english: [
+    {q:"In the sentence “Riya runs fast,” which word is the verb?", options:["Riya","runs","fast","sentence"], answer:1},
+    {q:"Which word is a noun?", options:["Beautiful","Quickly","School","Jump"], answer:2},
+    {q:"Choose the correct plural of “child.”", options:["Childs","Childes","Children","Childrens"], answer:2}
+  ],
+  gk: [
+    {q:"How many days are there in a leap year?", options:["364","365","366","367"], answer:2},
+    {q:"Which is the largest ocean on Earth?", options:["Atlantic Ocean","Indian Ocean","Arctic Ocean","Pacific Ocean"], answer:3},
+    {q:"How many planets are in our Solar System?", options:["7","8","9","10"], answer:1}
+  ]
+};
+function renderQuiz() {
+  const topic = document.getElementById("quizTopic").value;
+  const container = document.getElementById("quizQuestions");
   const result = document.getElementById("result");
-  const words = translations[currentLanguage];
-  if (!answer) {
+  result.textContent = "";
+  container.innerHTML = "";
+  quizBank[topic].forEach((item, index) => {
+    const card = document.createElement("article");
+    card.className = "quiz-question-card";
+    const heading = document.createElement("h3");
+    heading.textContent = (index + 1) + ". " + item.q;
+    card.appendChild(heading);
+    item.options.forEach((option, optionIndex) => {
+      const label = document.createElement("label");
+      label.className = "quiz-option";
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "quiz-" + topic + "-" + index;
+      input.value = String(optionIndex);
+      label.append(input, document.createTextNode(" " + option));
+      card.appendChild(label);
+    });
+    container.appendChild(card);
+  });
+}
+function checkQuiz() {
+  const topic = document.getElementById("quizTopic").value;
+  const questions = quizBank[topic];
+  const result = document.getElementById("result");
+  let score = 0;
+  let unanswered = 0;
+  questions.forEach((item, index) => {
+    const selected = document.querySelector('input[name="quiz-' + topic + '-' + index + '"]:checked');
+    if (!selected) unanswered++;
+    else if (Number(selected.value) === item.answer) score++;
+  });
+  if (unanswered > 0) {
+    result.textContent = "Please answer all " + questions.length + " questions before submitting. You have " + unanswered + " unanswered.";
     result.dataset.status = "";
-    result.textContent = words.quizSelect;
-  } else {
-    result.dataset.status = answer.value === "correct" ? "quizCorrect" : "quizWrong";
-    result.textContent = words[result.dataset.status];
+    return;
   }
+  result.textContent = "Your score: " + score + " / " + questions.length + (score === questions.length ? " — Excellent work!" : score >= 2 ? " — Good job! Keep practising." : " — Keep learning and try again!");
+  result.dataset.status = score === questions.length ? "quizCorrect" : "quizWrong";
 }
 document.getElementById("surveyForm").addEventListener("submit", event => {
   event.preventDefault();
   document.getElementById("surveyMessage").textContent = translations[currentLanguage].surveySuccess;
   event.target.reset();
 });
-applyLanguage("en");
+applyLanguage("en");\nrenderQuiz();
