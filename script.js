@@ -190,4 +190,5 @@ document.getElementById("surveyForm").addEventListener("submit", event => {
   document.getElementById("surveyMessage").textContent = translations[currentLanguage].surveySuccess;
   event.target.reset();
 });
-applyLanguage("en");\nrenderQuiz();
+applyLanguage("en");
+renderQuiz();
