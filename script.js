@@ -185,10 +185,6 @@ function checkQuiz() {
   result.textContent = "Your score: " + score + " / " + questions.length + (score === questions.length ? " — Excellent work!" : score >= 2 ? " — Good job! Keep practising." : " — Keep learning and try again!");
   result.dataset.status = score === questions.length ? "quizCorrect" : "quizWrong";
 }
-document.getElementById("surveyForm").addEventListener("submit", event => {
-  event.preventDefault();
-  document.getElementById("surveyMessage").textContent = translations[currentLanguage].surveySuccess;
-  event.target.reset();
-});
+// Feedback is collected through the embedded Google Form in index.html.
 applyLanguage("en");
 renderQuiz();
