@@ -69,15 +69,21 @@
 
     <section id="quiz" class="section">
       <span class="section-label" data-i18n="quizLabel">TEST YOUR KNOWLEDGE</span>
-      <h2 data-i18n="quizTitle">Quick Quiz</h2>
-      <div class="content-box">
-        <p class="question" data-i18n="quizQuestion">What is the full form of CPU?</p>
-        <label class="quiz-option"><input type="radio" name="q1" value="correct"><span data-i18n="quizOption1">Central Processing Unit</span></label>
-        <label class="quiz-option"><input type="radio" name="q1" value="wrong"><span data-i18n="quizOption2">Computer Personal Unit</span></label>
-        <label class="quiz-option"><input type="radio" name="q1" value="wrong"><span data-i18n="quizOption3">Central Program Unit</span></label>
-        <button class="primary-btn" onclick="checkQuiz()" data-i18n="quizButton">Check Answer</button>
-        <p id="result" aria-live="polite"></p>
+      <h2 data-i18n="quizTitle">Practice Quizzes</h2>
+      <p class="section-description">Choose a quiz topic, answer all questions, and check your score!</p>
+      <div class="quiz-picker">
+        <label for="quizTopic">Choose Quiz:</label>
+        <select id="quizTopic" onchange="renderQuiz()">
+          <option value="computer">Computer Basics</option>
+          <option value="science">Science</option>
+          <option value="math">Mathematics</option>
+          <option value="english">English Grammar</option>
+          <option value="gk">General Knowledge</option>
+        </select>
       </div>
+      <div id="quizQuestions" class="quiz-questions"></div>
+      <button class="primary-btn" onclick="checkQuiz()">Submit Quiz</button>
+      <p id="result" class="quiz-result" aria-live="polite"></p>
     </section>
 
     <section id="cyber" class="section section-light">
