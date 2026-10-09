@@ -101,32 +101,22 @@
 
     <section id="survey" class="section">
       <span class="section-label" data-i18n="surveyLabel">YOUR VOICE MATTERS</span>
-      <h2 data-i18n="surveyTitle">Student Learning Survey</h2>
-      <p class="section-description" data-i18n="surveyDescription">Share your experience and help us improve Shiksha Saathi.</p>
-      <form id="surveyForm" class="survey-form">
-        <label for="studentName" data-i18n="nameLabel">Your Name</label>
-        <input type="text" id="studentName" autocomplete="name" placeholder="Enter your name" data-i18n-placeholder="namePlaceholder" required>
-        <label for="studentClass" data-i18n="classLabel">Your Class</label>
-        <select id="studentClass" required>
-          <option value="" data-i18n="classPlaceholder">Select your class</option>
-          <option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option>
-          <option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option>
-          <option value="other" data-i18n="otherClass">Other</option>
-        </select>
-        <label for="learningRating" data-i18n="ratingLabel">How was your learning experience?</label>
-        <select id="learningRating" required>
-          <option value="" data-i18n="ratingPlaceholder">Select your experience</option>
-          <option value="excellent" data-i18n="ratingExcellent">Excellent</option>
-          <option value="good" data-i18n="ratingGood">Good</option>
-          <option value="average" data-i18n="ratingAverage">Average</option>
-          <option value="needsImprovement" data-i18n="ratingNeedsImprovement">Needs Improvement</option>
-        </select>
-        <label for="studentSuggestion" data-i18n="suggestionLabel">Suggestions (Optional)</label>
-        <textarea id="studentSuggestion" rows="4" placeholder="What would you like us to improve?" data-i18n-placeholder="suggestionPlaceholder"></textarea>
-        <button type="submit" class="primary-btn" data-i18n="surveyButton">Submit Survey</button>
-        <p id="surveyMessage" aria-live="polite"></p>
-        <p class="form-note" data-i18n="surveyNote">Demo form: answers are not saved or sent anywhere yet.</p>
-      </form>
+      <h2 data-i18n="surveyTitle">Student Feedback & Survey</h2>
+      <p class="section-description">Please fill out this short form to share your learning experience and help us improve Shiksha Saathi.</p>
+      <div class="google-form-wrap">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdRjUPxu8RryLniLmlGqrQ_KxvnOaSVJFWEdGUlfrsRULHL4w/viewform?embedded=true"
+          title="Shiksha Saathi Student Feedback Survey"
+          width="100%"
+          height="1100"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          loading="lazy">
+          Loading feedback form…
+        </iframe>
+      </div>
+      <p class="form-fallback">Form not showing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRjUPxu8RryLniLmlGqrQ_KxvnOaSVJFWEdGUlfrsRULHL4w/viewform" target="_blank" rel="noopener noreferrer">Open the feedback form in a new tab</a>.</p>
     </section>
 
     <section class="coming-soon">
