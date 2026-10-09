@@ -52,11 +52,18 @@
       <h2 data-i18n="subjectsTitle">Discover Your Subjects</h2>
       <p class="section-description" data-i18n="subjectsDescription">Choose a subject and begin your learning journey.</p>
       <div class="cards">
-        <article class="card"><div class="card-icon">📘</div><h3 data-i18n="englishTitle">English</h3><p data-i18n="englishDescription">Learn words, vocabulary and grammar.</p><button onclick="showMessage('english')" data-i18n="startButton">Explore →</button></article>
-        <article class="card"><div class="card-icon">🔢</div><h3 data-i18n="mathTitle">Mathematics</h3><p data-i18n="mathDescription">Practise numbers and calculations.</p><button onclick="showMessage('math')" data-i18n="startButton">Explore →</button></article>
-        <article class="card"><div class="card-icon">🔬</div><h3 data-i18n="scienceTitle">Science</h3><p data-i18n="scienceDescription">Discover the world around you.</p><button onclick="showMessage('science')" data-i18n="startButton">Explore →</button></article>
-        <article class="card"><div class="card-icon">💻</div><h3 data-i18n="computerTitle">Computer Basics</h3><p data-i18n="computerDescription">Understand computers and technology.</p><button onclick="showMessage('computer')" data-i18n="startButton">Explore →</button></article>
-        <article class="card"><div class="card-icon">🌍</div><h3 data-i18n="gkTitle">General Knowledge</h3><p data-i18n="gkDescription">Discover interesting facts about the world.</p><button onclick="showMessage('gk')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">📘</div><h3 data-i18n="englishTitle">English</h3><p data-i18n="englishDescription">Learn words, vocabulary and grammar.</p><button onclick="openLessons('english')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">🔢</div><h3 data-i18n="mathTitle">Mathematics</h3><p data-i18n="mathDescription">Practise numbers and calculations.</p><button onclick="openLessons('math')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">🔬</div><h3 data-i18n="scienceTitle">Science</h3><p data-i18n="scienceDescription">Discover the world around you.</p><button onclick="openLessons('science')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">💻</div><h3 data-i18n="computerTitle">Computer Basics</h3><p data-i18n="computerDescription">Understand computers and technology.</p><button onclick="openLessons('computer')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">🌍</div><h3 data-i18n="gkTitle">General Knowledge</h3><p data-i18n="gkDescription">Discover interesting facts about the world.</p><button onclick="openLessons('gk')" data-i18n="startButton">Explore →</button></article>
+      </div>
+      <div id="lessonArea" class="lesson-area" hidden aria-live="polite">
+        <div class="lesson-heading">
+          <div><span class="section-label" data-i18n="lessonLabel">YOUR LESSON</span><h2 id="lessonTitle">Lesson</h2></div>
+          <button class="close-lesson" type="button" onclick="closeLessons()" data-i18n="closeLesson">Close ✕</button>
+        </div>
+        <div id="lessonContent" class="lesson-content"></div>
       </div>
     </section>
 
