@@ -1,173 +1,134 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>hiksha Saathi - Digital Learning Portal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4338ca">
+  <title>Shiksha Saathi | Digital Learning Portal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="header">
+    <a href="#home" class="logo">📚 Shiksha Saathi</a>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#home" data-i18n="navHome">Home</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#subjects" data-i18n="navSubjects">Subjects</a>
+      <a href="#quiz" data-i18n="navQuiz">Quiz</a>
+      <a href="#cyber" data-i18n="navCyber">Cyber Safety</a>
+      <a href="#survey" data-i18n="navSurvey">Survey</a>
+      <select id="languageSelect" aria-label="Choose language">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="mr">मराठी</option>
+      </select>
+    </nav>
+  </header>
 
-    <header>
-        <h1>📚 Shiksha Saathi</h1>
-        <p>Digital Learning Portal for Government Schools</p>
-
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About CEP</a>
-            <a href="#subjects">Subjects</a>
-            <a href="#quiz">Quiz</a>
-            <a href="#cyber">Cyber Safety</a>
-            <a href="#feedback">Feedback</a>
-        </nav>
-    </header>
-
-    <!-- HOME -->
+  <main>
     <section id="home" class="hero">
-        <h2>Learn Today, Grow Tomorrow! 🌟</h2>
-        <p>
-            Welcome to Shiksha Saathi – a simple digital learning
-            platform created for school students.
-        </p>
-
-        <button onclick="startLearning()">Start Learning</button>
+      <div class="hero-content">
+        <span class="badge" data-i18n="heroBadge">LEARN • EXPLORE • GROW</span>
+        <h1 data-i18n="heroTitle">Learn Today, Grow Tomorrow!</h1>
+        <p data-i18n="heroDescription">Welcome to Shiksha Saathi — a friendly digital learning platform designed to help every student learn and grow.</p>
+        <button class="primary-btn" onclick="startLearning()" data-i18n="heroButton">Start Learning →</button>
+        <p class="hero-note" data-i18n="heroNote">Learning made simple, accessible and enjoyable.</p>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="book-icon">📚</div>
+        <h2 data-i18n="heroCardTitle">Your Learning Journey</h2>
+        <p data-i18n="heroCardText">Discover something new every day.</p>
+      </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <h2>📖 About Our CEP Project</h2>
-
-        <p>
-            Our Community Engagement Project focuses on
-            <b>Developing E-Learning Content for Government Schools.</b>
-        </p>
-
-        <p>
-            The main aim of this project is to provide simple,
-            useful and easy-to-understand digital learning content
-            for students.
-        </p>
+    <section id="about" class="section">
+      <span class="section-label" data-i18n="aboutLabel">ABOUT OUR PROJECT</span>
+      <h2 data-i18n="aboutTitle">Learning for Everyone</h2>
+      <p class="section-description" data-i18n="aboutDescription">Shiksha Saathi is a Community Engagement Project focused on developing digital learning content for government schools. Our aim is to make learning simple, useful and accessible.</p>
     </section>
 
-    <!-- SUBJECTS -->
-    <section id="subjects">
-        <h2>📚 Our Subjects</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>📘 English</h3>
-                <p>Learn basic English words and grammar.</p>
-                <button onclick="showMessage('English')">
-                    Start
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>🔢 Mathematics</h3>
-                <p>Learn numbers, calculations and basic maths.</p>
-                <button onclick="showMessage('Mathematics')">
-                    Start
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>🔬 Science</h3>
-                <p>Explore basic science concepts.</p>
-                <button onclick="showMessage('Science')">
-                    Start
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>💻 Computer Basics</h3>
-                <p>Learn about computers and technology.</p>
-                <button onclick="showMessage('Computer Basics')">
-                    Start
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>🌍 General Knowledge</h3>
-                <p>Improve your general knowledge.</p>
-                <button onclick="showMessage('General Knowledge')">
-                    Start
-                </button>
-            </div>
-
-        </div>
+    <section id="subjects" class="section section-light">
+      <span class="section-label" data-i18n="subjectsLabel">EXPLORE AND LEARN</span>
+      <h2 data-i18n="subjectsTitle">Discover Your Subjects</h2>
+      <p class="section-description" data-i18n="subjectsDescription">Choose a subject and begin your learning journey.</p>
+      <div class="cards">
+        <article class="card"><div class="card-icon">📘</div><h3 data-i18n="englishTitle">English</h3><p data-i18n="englishDescription">Learn words, vocabulary and grammar.</p><button onclick="showMessage('english')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">🔢</div><h3 data-i18n="mathTitle">Mathematics</h3><p data-i18n="mathDescription">Practise numbers and calculations.</p><button onclick="showMessage('math')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">🔬</div><h3 data-i18n="scienceTitle">Science</h3><p data-i18n="scienceDescription">Discover the world around you.</p><button onclick="showMessage('science')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">💻</div><h3 data-i18n="computerTitle">Computer Basics</h3><p data-i18n="computerDescription">Understand computers and technology.</p><button onclick="showMessage('computer')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">🌍</div><h3 data-i18n="gkTitle">General Knowledge</h3><p data-i18n="gkDescription">Discover interesting facts about the world.</p><button onclick="showMessage('gk')" data-i18n="startButton">Explore →</button></article>
+      </div>
     </section>
 
-    <!-- QUIZ -->
-    <section id="quiz">
-        <h2>📝 Quick Quiz</h2>
-
-        <div class="quiz-box">
-
-            <p><b>1. What is the full form of CPU?</b></p>
-
-            <label>
-                <input type="radio" name="q1" value="correct">
-                Central Processing Unit
-            </label><br>
-
-            <label>
-                <input type="radio" name="q1" value="wrong">
-                Computer Personal Unit
-            </label><br>
-
-            <label>
-                <input type="radio" name="q1" value="wrong">
-                Central Program Unit
-            </label>
-
-            <br><br>
-
-            <button onclick="checkQuiz()">Submit Quiz</button>
-
-            <h3 id="result"></h3>
-
-        </div>
+    <section id="quiz" class="section">
+      <span class="section-label" data-i18n="quizLabel">TEST YOUR KNOWLEDGE</span>
+      <h2 data-i18n="quizTitle">Quick Quiz</h2>
+      <div class="content-box">
+        <p class="question" data-i18n="quizQuestion">What is the full form of CPU?</p>
+        <label class="quiz-option"><input type="radio" name="q1" value="correct"><span data-i18n="quizOption1">Central Processing Unit</span></label>
+        <label class="quiz-option"><input type="radio" name="q1" value="wrong"><span data-i18n="quizOption2">Computer Personal Unit</span></label>
+        <label class="quiz-option"><input type="radio" name="q1" value="wrong"><span data-i18n="quizOption3">Central Program Unit</span></label>
+        <button class="primary-btn" onclick="checkQuiz()" data-i18n="quizButton">Check Answer</button>
+        <p id="result" aria-live="polite"></p>
+      </div>
     </section>
 
-    <!-- CYBER SAFETY -->
-    <section id="cyber">
-        <h2>🔐 Cyber Safety</h2>
-
-        <div class="safety">
-            <p>✅ Never share your OTP with anyone.</p>
-            <p>✅ Never share your ATM PIN or password.</p>
-            <p>✅ Use strong passwords.</p>
-            <p>✅ Do not click suspicious links.</p>
-            <p>✅ Report online fraud to a trusted person.</p>
-        </div>
+    <section id="cyber" class="section section-light">
+      <span class="section-label" data-i18n="cyberLabel">STAY SAFE ONLINE</span>
+      <h2 data-i18n="cyberTitle">Cyber Safety</h2>
+      <p class="section-description" data-i18n="cyberDescription">Follow these simple tips to stay safe on the internet.</p>
+      <div class="safety-list">
+        <p data-i18n="safety1">🔐 Never share your OTP or password.</p>
+        <p data-i18n="safety2">🔗 Avoid clicking suspicious links.</p>
+        <p data-i18n="safety3">🔑 Use strong and unique passwords.</p>
+        <p data-i18n="safety4">🛡️ Keep your personal information private.</p>
+        <p data-i18n="safety5">🙋 Report online problems to a trusted adult.</p>
+      </div>
     </section>
 
-    <!-- FEEDBACK -->
-    <section id="feedback">
-        <h2>💬 Student Feedback</h2>
-
-        <form onsubmit="submitFeedback(event)">
-
-            <input type="text" placeholder="Enter your name" required>
-
-            <input type="text" placeholder="Enter your class" required>
-
-            <textarea placeholder="What did you learn?"></textarea>
-
-            <button type="submit">Submit Feedback</button>
-
-        </form>
-
-        <p id="feedbackMessage"></p>
+    <section id="survey" class="section">
+      <span class="section-label" data-i18n="surveyLabel">YOUR VOICE MATTERS</span>
+      <h2 data-i18n="surveyTitle">Student Learning Survey</h2>
+      <p class="section-description" data-i18n="surveyDescription">Share your experience and help us improve Shiksha Saathi.</p>
+      <form id="surveyForm" class="survey-form">
+        <label for="studentName" data-i18n="nameLabel">Your Name</label>
+        <input type="text" id="studentName" autocomplete="name" placeholder="Enter your name" data-i18n-placeholder="namePlaceholder" required>
+        <label for="studentClass" data-i18n="classLabel">Your Class</label>
+        <select id="studentClass" required>
+          <option value="" data-i18n="classPlaceholder">Select your class</option>
+          <option value="5">Class 5</option><option value="6">Class 6</option><option value="7">Class 7</option>
+          <option value="8">Class 8</option><option value="9">Class 9</option><option value="10">Class 10</option>
+          <option value="other" data-i18n="otherClass">Other</option>
+        </select>
+        <label for="learningRating" data-i18n="ratingLabel">How was your learning experience?</label>
+        <select id="learningRating" required>
+          <option value="" data-i18n="ratingPlaceholder">Select your experience</option>
+          <option value="excellent" data-i18n="ratingExcellent">Excellent</option>
+          <option value="good" data-i18n="ratingGood">Good</option>
+          <option value="average" data-i18n="ratingAverage">Average</option>
+          <option value="needsImprovement" data-i18n="ratingNeedsImprovement">Needs Improvement</option>
+        </select>
+        <label for="studentSuggestion" data-i18n="suggestionLabel">Suggestions (Optional)</label>
+        <textarea id="studentSuggestion" rows="4" placeholder="What would you like us to improve?" data-i18n-placeholder="suggestionPlaceholder"></textarea>
+        <button type="submit" class="primary-btn" data-i18n="surveyButton">Submit Survey</button>
+        <p id="surveyMessage" aria-live="polite"></p>
+        <p class="form-note" data-i18n="surveyNote">Demo form: answers are not saved or sent anywhere yet.</p>
+      </form>
     </section>
 
-    <footer>
-        <p>© 2026 Shiksha Saathi | Community Engagement Project</p>
-    </footer>
+    <section class="coming-soon">
+      <div class="coming-soon-icon" aria-hidden="true">🌏</div>
+      <h2 data-i18n="comingTitle">More Languages Coming Soon!</h2>
+      <p data-i18n="comingDescription">We are working to make learning accessible in more Indian languages. Stay tuned for future updates!</p>
+      <div class="language-tags"><span>ગુજરાતી</span><span>ਪੰਜਾਬੀ</span><span>বাংলা</span><span>ಕನ್ನಡ</span><span>தமிழ்</span><span>తెలుగు</span></div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-
+  <footer class="footer">
+    <h3>📚 Shiksha Saathi</h3>
+    <p data-i18n="footerText">Learning opportunities for every student.</p>
+    <p>© 2026 Shiksha Saathi | <span data-i18n="footerRights">Community Engagement Project</span></p>
+  </footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
