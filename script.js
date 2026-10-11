@@ -317,5 +317,116 @@ function checkQuiz() {
   document.getElementById("previousQuizBtn").disabled = true;
 }
 
-applyLanguage("en");
+
+function renderQuiz() {
+  currentQuizQuestion = 0;
+  currentQuizAnswers = {};
+  document.getElementById("submitQuizBtn").disabled = false;
+  showQuizQuestion();
+}
+function showQuizQuestion() {
+  const topic = document.getElementById("quizTopic").value;
+  const questions = quizBank[topic] || [];
+  const item = questions[currentQuizQuestion];
+  if (!item) return;
+  const words = translations[currentLanguage] || translations.en;
+  const container = document.getElementById("quizQuestions");
+  container.innerHTML = "";
+  const result = document.getElementById("result");
+  result.textContent = "";
+  result.dataset.status = "";
+  const progressPrefix = currentLanguage === "hi" ? "प्रश्न " : currentLanguage === "mr" ? "प्रश्न " : "Question ";
+  const progressJoin = currentLanguage === "en" ? " of " : " / ";
+  document.getElementById("quizProgress").textContent = progressPrefix + (currentQuizQuestion + 1) + progressJoin + questions.length;
+  const card = document.createElement("article");
+  card.className = "quiz-question-card";
+  const heading = document.createElement("h3");
+  heading.textContent = (currentQuizQuestion + 1) + ". " + item.q;
+  card.appendChild(heading);
+  item.options.forEach((option, optionIndex) => {
+    const label = document.createElement("label");
+    label.className = "quiz-option";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "quiz-" + topic + "-" + currentQuizQuestion;
+    input.value = String(optionIndex);
+    input.checked = currentQuizAnswers[currentQuizQuestion] === optionIndex;
+    input.disabled = document.getElementById("submitQuizBtn").disabled;
+    input.addEventListener("change", () => {
+      currentQuizAnswers[currentQuizQuestion] = optionIndex;
+      result.textContent = "";
+    });
+    label.append(input, document.createTextNode(" " + option));
+    card.appendChild(label);
+  });
+  container.appendChild(card);
+  document.getElementById("previousQuizBtn").textContent = words.quizPrevious || "← Previous";
+  document.getElementById("nextQuizBtn").textContent = words.quizNext || "Next →";
+  document.getElementById("submitQuizBtn").textContent = words.quizSubmit || "Submit Quiz";
+  document.getElementById("previousQuizBtn").disabled = currentQuizQuestion === 0 || document.getElementById("submitQuizBtn").disabled;
+  document.getElementById("nextQuizBtn").hidden = currentQuizQuestion === questions.length - 1 || document.getElementById("submitQuizBtn").disabled;
+  document.getElementById("submitQuizBtn").hidden = currentQuizQuestion !== questions.length - 1 || document.getElementById("submitQuizBtn").disabled;
+  if (document.getElementById("submitQuizBtn").disabled) renderQuizReview();
+}
+function nextQuestion() {
+  const topic = document.getElementById("quizTopic").value;
+  if (currentQuizAnswers[currentQuizQuestion] === undefined) {
+    document.getElementById("result").textContent = translations[currentLanguage].quizAnswerPrompt || "Please choose an answer before moving on.";
+    return;
+  }
+  if (currentQuizQuestion < quizBank[topic].length - 1) { currentQuizQuestion++; showQuizQuestion(); }
+}
+function previousQuestion() {
+  if (currentQuizQuestion > 0) { currentQuizQuestion--; showQuizQuestion(); }
+}
+function checkQuiz() {
+  const topic = document.getElementById("quizTopic").value;
+  const questions = quizBank[topic];
+  const words = translations[currentLanguage] || translations.en;
+  const unanswered = questions.length - Object.keys(currentQuizAnswers).length;
+  if (unanswered > 0) {
+    document.getElementById("result").textContent = (words.quizUnanswered || "Please answer all 10 questions before submitting.") + " (" + unanswered + ")";
+    return;
+  }
+  const score = questions.reduce((total, item, index) => total + (currentQuizAnswers[index] === item.answer ? 1 : 0), 0);
+  const result = document.getElementById("result");
+  const encouragement = score === questions.length ? words.quizExcellent : score >= 7 ? words.quizGreat : score >= 4 ? words.quizGood : words.quizKeep;
+  result.textContent = (words.quizScore || "Your score") + ": " + score + " / " + questions.length + " — " + (encouragement || "Keep practising!");
+  result.dataset.score = String(score);
+  document.getElementById("submitQuizBtn").disabled = true;
+  document.getElementById("nextQuizBtn").hidden = true;
+  document.getElementById("previousQuizBtn").disabled = true;
+  renderQuizReview();
+}
+function renderQuizReview() {
+  const topic = document.getElementById("quizTopic").value;
+  const questions = quizBank[topic];
+  const words = translations[currentLanguage] || translations.en;
+  const container = document.getElementById("quizQuestions");
+  container.innerHTML = "";
+  questions.forEach((item, index) => {
+    const card = document.createElement("article");
+    card.className = "quiz-question-card";
+    const heading = document.createElement("h3");
+    heading.textContent = (index + 1) + ". " + item.q;
+    const answer = document.createElement("p");
+    answer.className = "quiz-explanation";
+    const selected = currentQuizAnswers[index];
+    const yourAnswer = selected === undefined ? "—" : item.options[selected];
+    const yourLabel = currentLanguage === "hi" ? "आपका उत्तर" : currentLanguage === "mr" ? "तुमचे उत्तर" : "Your answer";
+    const correct = currentLanguage === "hi" ? "सही उत्तर" : currentLanguage === "mr" ? "योग्य उत्तर" : "Correct answer";
+    const explain = currentLanguage === "hi" ? "क्यों: सही विकल्प इस प्रश्न का सही उत्तर है।" : currentLanguage === "mr" ? "का: निवडलेला योग्य पर्याय या प्रश्नाचे उत्तर देतो." : "Why: the correct option is the factual answer to this question.";
+    answer.textContent = correct + ": " + item.options[item.answer] + " | " + yourLabel + ": " + yourAnswer + (selected === item.answer ? " ✓" : " ✗") + " — " + explain;
+    card.append(heading, answer);
+    container.appendChild(card);
+  });
+  const retry = document.createElement("button");
+  retry.type = "button";
+  retry.className = "primary-btn";
+  retry.textContent = words.quizRetry || "Try Again";
+  retry.addEventListener("click", renderQuiz);
+  container.appendChild(retry);
+}
+
+applyLanguage(currentLanguage);
 renderQuiz();
