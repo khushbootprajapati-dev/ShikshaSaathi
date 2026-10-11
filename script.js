@@ -116,75 +116,150 @@ function openLessons(subject) {
 function closeLessons() { document.getElementById("lessonArea").hidden = true; }
 const quizBank = {
   computer: [
-    {q:"What is the full form of CPU?", options:["Central Processing Unit","Computer Personal Unit","Central Program Utility","Control Power Unit"], answer:0},
-    {q:"Which device is mainly used to type text?", options:["Monitor","Keyboard","Speaker","Printer"], answer:1},
-    {q:"Which one is an output device?", options:["Mouse","Microphone","Monitor","Scanner"], answer:2}
+    {q:"What is the full form of CPU?",options:["Central Processing Unit","Computer Personal Unit","Central Program Utility","Control Power Unit"],answer:0},
+    {q:"Which device is mainly used to type text?",options:["Monitor","Keyboard","Speaker","Printer"],answer:1},
+    {q:"Which one is an output device?",options:["Mouse","Microphone","Monitor","Scanner"],answer:2},
+    {q:"Which device moves the pointer on a computer screen?",options:["Mouse","Printer","Speaker","Projector"],answer:0},
+    {q:"Which part displays text and pictures?",options:["Keyboard","Monitor","CPU fan","Microphone"],answer:1},
+    {q:"Which of these is used to print on paper?",options:["Scanner","Webcam","Printer","Joystick"],answer:2},
+    {q:"Which device can record your voice?",options:["Monitor","Microphone","Printer","Plotter"],answer:1},
+    {q:"What is a computer's main purpose?",options:["Only play music","Process data and information","Only print pages","Only make calls"],answer:1},
+    {q:"Which is a portable storage device?",options:["USB flash drive","Monitor","Keyboard","Mouse pad"],answer:0},
+    {q:"Which of these is software?",options:["Mouse","Windows operating system","Monitor","Keyboard"],answer:1}
   ],
   science: [
-    {q:"Which planet is known as the Red Planet?", options:["Venus","Mars","Jupiter","Mercury"], answer:1},
-    {q:"What do plants absorb from the air for photosynthesis?", options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"], answer:2},
-    {q:"At sea level, water normally boils at what temperature?", options:["50°C","75°C","100°C","150°C"], answer:2}
+    {q:"Which planet is known as the Red Planet?",options:["Venus","Mars","Jupiter","Mercury"],answer:1},
+    {q:"What do plants absorb from the air for photosynthesis?",options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],answer:2},
+    {q:"At sea level, water normally boils at what temperature?",options:["50°C","75°C","100°C","150°C"],answer:2},
+    {q:"Which organ pumps blood around the human body?",options:["Lungs","Brain","Heart","Stomach"],answer:2},
+    {q:"Which gas do humans need for breathing?",options:["Oxygen","Carbon dioxide","Helium","Methane"],answer:0},
+    {q:"What is the process by which plants make food using sunlight?",options:["Digestion","Photosynthesis","Evaporation","Respiration"],answer:1},
+    {q:"Which state of matter has a fixed shape and volume?",options:["Gas","Liquid","Solid","Vapour"],answer:2},
+    {q:"Which force pulls objects toward Earth?",options:["Magnetism","Gravity","Friction","Electricity"],answer:1},
+    {q:"What is the natural satellite of Earth?",options:["The Sun","Mars","The Moon","Venus"],answer:2},
+    {q:"Which part of a plant usually absorbs water from the soil?",options:["Flower","Leaf","Root","Fruit"],answer:2}
   ],
   math: [
-    {q:"What is 12 × 8?", options:["84","96","108","88"], answer:1},
-    {q:"What is 1/4 + 2/4?", options:["3/4","3/8","2/4","1/2"], answer:0},
-    {q:"Which number is an even number?", options:["13","21","34","45"], answer:2}
+    {q:"What is 12 × 8?",options:["84","96","108","88"],answer:1},
+    {q:"What is 1/4 + 2/4?",options:["3/4","3/8","2/4","1/2"],answer:0},
+    {q:"Which number is an even number?",options:["13","21","34","45"],answer:2},
+    {q:"What is 100 − 37?",options:["53","63","73","67"],answer:1},
+    {q:"What is 9 × 7?",options:["56","63","72","49"],answer:1},
+    {q:"How many sides does a hexagon have?",options:["5","6","7","8"],answer:1},
+    {q:"What is half of 86?",options:["42","43","46","48"],answer:1},
+    {q:"Which fraction is equal to one half?",options:["2/3","2/4","3/4","1/3"],answer:1},
+    {q:"What is the perimeter of a square with each side 5 cm?",options:["10 cm","15 cm","20 cm","25 cm"],answer:2},
+    {q:"What is 144 ÷ 12?",options:["10","11","12","14"],answer:2}
   ],
   english: [
-    {q:"In the sentence “Riya runs fast,” which word is the verb?", options:["Riya","runs","fast","sentence"], answer:1},
-    {q:"Which word is a noun?", options:["Beautiful","Quickly","School","Jump"], answer:2},
-    {q:"Choose the correct plural of “child.”", options:["Childs","Childes","Children","Childrens"], answer:2}
+    {q:"In “Riya runs fast,” which word is the verb?",options:["Riya","runs","fast","sentence"],answer:1},
+    {q:"Which word is a noun?",options:["Beautiful","Quickly","School","Jump"],answer:2},
+    {q:"Choose the correct plural of “child.”",options:["Childs","Childes","Children","Childrens"],answer:2},
+    {q:"Choose the correct sentence.",options:["She go to school.","She goes to school.","She going school.","She gone to school."],answer:1},
+    {q:"Which word is an adjective in “a blue sky”?",options:["a","blue","sky","in"],answer:1},
+    {q:"What is the past tense of “play”?",options:["Plays","Playing","Played","Will play"],answer:2},
+    {q:"Choose the opposite of “early.”",options:["Soon","Late","Quick","First"],answer:1},
+    {q:"Which word is a pronoun?",options:["Table","They","Happy","Write"],answer:1},
+    {q:"Choose the correctly spelled word.",options:["Beautifull","Beutiful","Beautiful","Beautifal"],answer:2},
+    {q:"Which punctuation mark ends a question?",options:["Full stop (.)","Comma (,)","Question mark (?)","Colon (:)"],answer:2}
   ],
   gk: [
-    {q:"How many days are there in a leap year?", options:["364","365","366","367"], answer:2},
-    {q:"Which is the largest ocean on Earth?", options:["Atlantic Ocean","Indian Ocean","Arctic Ocean","Pacific Ocean"], answer:3},
-    {q:"How many planets are in our Solar System?", options:["7","8","9","10"], answer:1}
+    {q:"How many days are there in a leap year?",options:["364","365","366","367"],answer:2},
+    {q:"Which is the largest ocean on Earth?",options:["Atlantic Ocean","Indian Ocean","Arctic Ocean","Pacific Ocean"],answer:3},
+    {q:"How many planets are in our Solar System?",options:["7","8","9","10"],answer:1},
+    {q:"What is the capital of India?",options:["Mumbai","New Delhi","Kolkata","Chennai"],answer:1},
+    {q:"Which is the national animal of India?",options:["Lion","Elephant","Bengal tiger","Leopard"],answer:2},
+    {q:"Which festival is widely known as the festival of lights in India?",options:["Holi","Diwali","Eid","Pongal"],answer:1},
+    {q:"Which is the closest star to Earth?",options:["Sirius","The Sun","Polaris","Alpha Centauri"],answer:1},
+    {q:"How many colours are commonly named in a rainbow?",options:["5","6","7","8"],answer:2},
+    {q:"Which continent is India part of?",options:["Europe","Asia","Africa","South America"],answer:1},
+    {q:"Which sport uses a bat, ball and wickets?",options:["Hockey","Football","Cricket","Badminton"],answer:2}
   ]
 };
+
+let currentQuizQuestion = 0;
+let currentQuizAnswers = {};
+
 function renderQuiz() {
+  currentQuizQuestion = 0;
+  currentQuizAnswers = {};
+  showQuizQuestion();
+}
+
+function showQuizQuestion() {
   const topic = document.getElementById("quizTopic").value;
+  const questions = quizBank[topic] || [];
+  const item = questions[currentQuizQuestion];
   const container = document.getElementById("quizQuestions");
   const result = document.getElementById("result");
-  result.textContent = "";
+  const progress = document.getElementById("quizProgress");
   container.innerHTML = "";
-  quizBank[topic].forEach((item, index) => {
-    const card = document.createElement("article");
-    card.className = "quiz-question-card";
-    const heading = document.createElement("h3");
-    heading.textContent = (index + 1) + ". " + item.q;
-    card.appendChild(heading);
-    item.options.forEach((option, optionIndex) => {
-      const label = document.createElement("label");
-      label.className = "quiz-option";
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = "quiz-" + topic + "-" + index;
-      input.value = String(optionIndex);
-      label.append(input, document.createTextNode(" " + option));
-      card.appendChild(label);
-    });
-    container.appendChild(card);
+  result.textContent = "";
+  result.dataset.status = "";
+  progress.textContent = "Question " + (currentQuizQuestion + 1) + " of " + questions.length;
+
+  const card = document.createElement("article");
+  card.className = "quiz-question-card";
+  const heading = document.createElement("h3");
+  heading.textContent = (currentQuizQuestion + 1) + ". " + item.q;
+  card.appendChild(heading);
+
+  item.options.forEach((option, optionIndex) => {
+    const label = document.createElement("label");
+    label.className = "quiz-option";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "quiz-" + topic + "-" + currentQuizQuestion;
+    input.value = String(optionIndex);
+    input.checked = currentQuizAnswers[currentQuizQuestion] === optionIndex;
+    input.addEventListener("change", () => { currentQuizAnswers[currentQuizQuestion] = optionIndex; });
+    label.append(input, document.createTextNode(" " + option));
+    card.appendChild(label);
   });
+  container.appendChild(card);
+
+  document.getElementById("previousQuizBtn").disabled = currentQuizQuestion === 0;
+  document.getElementById("nextQuizBtn").hidden = currentQuizQuestion === questions.length - 1;
+  document.getElementById("submitQuizBtn").hidden = currentQuizQuestion !== questions.length - 1;
 }
+
+function nextQuestion() {
+  const topic = document.getElementById("quizTopic").value;
+  if (currentQuizQuestion < quizBank[topic].length - 1) {
+    currentQuizQuestion++;
+    showQuizQuestion();
+  }
+}
+
+function previousQuestion() {
+  if (currentQuizQuestion > 0) {
+    currentQuizQuestion--;
+    showQuizQuestion();
+  }
+}
+
 function checkQuiz() {
   const topic = document.getElementById("quizTopic").value;
   const questions = quizBank[topic];
   const result = document.getElementById("result");
-  let score = 0;
-  let unanswered = 0;
-  questions.forEach((item, index) => {
-    const selected = document.querySelector('input[name="quiz-' + topic + '-' + index + '"]:checked');
-    if (!selected) unanswered++;
-    else if (Number(selected.value) === item.answer) score++;
-  });
+  const unanswered = questions.length - Object.keys(currentQuizAnswers).length;
   if (unanswered > 0) {
-    result.textContent = "Please answer all " + questions.length + " questions before submitting. You have " + unanswered + " unanswered.";
+    result.textContent = "Please answer all 10 questions before submitting. You have " + unanswered + " unanswered.";
     result.dataset.status = "";
     return;
   }
-  result.textContent = "Your score: " + score + " / " + questions.length + (score === questions.length ? " — Excellent work!" : score >= 2 ? " — Good job! Keep practising." : " — Keep learning and try again!");
+  const score = questions.reduce((total, item, index) =>
+    total + (currentQuizAnswers[index] === item.answer ? 1 : 0), 0);
+  result.textContent = "Your score: " + score + " / " + questions.length +
+    (score === questions.length ? " — Excellent work!" :
+     score >= 7 ? " — Great job! Keep practising." :
+     score >= 4 ? " — Good effort. Keep learning!" :
+     " — Keep learning and try again!");
   result.dataset.status = score === questions.length ? "quizCorrect" : "quizWrong";
+  document.getElementById("submitQuizBtn").disabled = true;
+  document.getElementById("nextQuizBtn").hidden = true;
+  document.getElementById("previousQuizBtn").disabled = true;
 }
-// Feedback is collected through the embedded Google Form in index.html.
+
 applyLanguage("en");
 renderQuiz();
