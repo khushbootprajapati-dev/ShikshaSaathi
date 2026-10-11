@@ -45,6 +45,11 @@ digitalTitle:"मोबाईल आणि डिजिटल कौशल्य
 safetyExample1:"उदाहरण: कोणीतरी फोन करून OTP दिला नाही तर बँक खाते बंद होईल असे सांगते. थांबा आणि बँकेच्या अधिकृत क्रमांकावर संपर्क करा.",safetyExample2:"उदाहरण: मोफत फोन किंवा बक्षीस देण्याचे सांगणारा संदेश अनोळखी लिंक उघडायला सांगतो. लिंक उघडू नका आणि माहिती देऊ नका.",safetyExample3:"शब्द, अंक आणि चिन्हे असलेला लांब पासवर्ड वापरा. बँकेचा पासवर्ड इतर वेबसाइटवर वापरू नका.",safetyExample4:"तुमचा पत्ता, शाळेचे ओळखपत्र, बँक तपशील किंवा सध्याचे ठिकाण सार्वजनिक करू नका.",safetyExample5:"ऑनलाइन कोणी त्रास दिला किंवा धमकावले तर संदेश जतन करा आणि विश्वासू मोठ्या व्यक्तीची मदत घ्या。"
 });
 
+
+Object.assign(translations.en,{topicComputer:"Computer Basics",topicScience:"Science",topicMath:"Mathematics",topicEnglish:"English Grammar",topicGk:"General Knowledge"});
+Object.assign(translations.hi,{topicComputer:"कंप्यूटर की मूल बातें",topicScience:"विज्ञान",topicMath:"गणित",topicEnglish:"अंग्रेज़ी व्याकरण",topicGk:"सामान्य ज्ञान"});
+Object.assign(translations.mr,{topicComputer:"संगणकाची मूलतत्त्वे",topicScience:"विज्ञान",topicMath:"गणित",topicEnglish:"इंग्रजी व्याकरण",topicGk:"सामान्य ज्ञान"});
+
 let currentLanguage = localStorage.getItem("shikshaSaathiLanguage") || "en";
 function applyLanguage(language) {
   currentLanguage = translations[language] ? language : "en";
