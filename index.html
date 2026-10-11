@@ -70,7 +70,7 @@
     <section id="quiz" class="section">
       <span class="section-label" data-i18n="quizLabel">TEST YOUR KNOWLEDGE</span>
       <h2 data-i18n="quizTitle">Practice Quizzes</h2>
-      <p class="section-description">Choose a quiz topic, answer all questions, and check your score!</p>
+      <p class="section-description">Choose a topic and answer 10 questions. Use Next and Previous to move between questions.</p>
       <div class="quiz-picker">
         <label for="quizTopic">Choose Quiz:</label>
         <select id="quizTopic" onchange="renderQuiz()">
@@ -81,8 +81,13 @@
           <option value="gk">General Knowledge</option>
         </select>
       </div>
+      <div class="quiz-progress" id="quizProgress" aria-live="polite">Question 1 of 10</div>
       <div id="quizQuestions" class="quiz-questions"></div>
-      <button class="primary-btn" onclick="checkQuiz()">Submit Quiz</button>
+      <div class="quiz-navigation">
+        <button class="secondary-btn" id="previousQuizBtn" type="button" onclick="previousQuestion()" disabled>← Previous</button>
+        <button class="primary-btn" id="nextQuizBtn" type="button" onclick="nextQuestion()">Next →</button>
+        <button class="primary-btn" id="submitQuizBtn" type="button" onclick="checkQuiz()" hidden>Submit Quiz</button>
+      </div>
       <p id="result" class="quiz-result" aria-live="polite"></p>
     </section>
 
