@@ -7,7 +7,7 @@ subjectsLabel:"EXPLORE AND LEARN",subjectsTitle:"Discover Your Subjects",subject
 quizLabel:"TEST YOUR KNOWLEDGE",quizTitle:"Quick Quiz",quizQuestion:"What is the full form of CPU?",quizOption1:"Central Processing Unit",quizOption2:"Computer Personal Unit",quizOption3:"Central Program Unit",quizButton:"Check Answer",quizSelect:"Please select an answer.",quizCorrect:"🎉 Correct answer! Well done!",quizWrong:"❌ Incorrect answer. Try again!",
 cyberLabel:"STAY SAFE ONLINE",cyberTitle:"Cyber Safety",cyberDescription:"Follow these simple tips to stay safe on the internet.",safety1:"🔐 Never share your OTP or password.",safety2:"🔗 Avoid clicking suspicious links.",safety3:"🔑 Use strong and unique passwords.",safety4:"🛡️ Keep your personal information private.",safety5:"🙋 Report online problems to a trusted adult.",
 surveyLabel:"YOUR VOICE MATTERS",surveyTitle:"Student Learning Survey",surveyDescription:"Share your experience and help us improve Shiksha Saathi.",nameLabel:"Your Name",namePlaceholder:"Enter your name",classLabel:"Your Class",classPlaceholder:"Select your class",otherClass:"Other",ratingLabel:"How was your learning experience?",ratingPlaceholder:"Select your experience",ratingExcellent:"Excellent",ratingGood:"Good",ratingAverage:"Average",ratingNeedsImprovement:"Needs Improvement",suggestionLabel:"Suggestions (Optional)",suggestionPlaceholder:"What would you like us to improve?",surveyButton:"Submit Survey",surveySuccess:"✅ Thank you! This demo does not save or send your answers.",surveyNote:"Demo form: answers are not saved or sent anywhere yet.",
-comingTitle:"More Languages Coming Soon!",comingDescription:"We are working to make learning accessible in more Indian languages. Stay tuned for future updates!",footerText:"Learning opportunities for every student.",footerRights:"Community Engagement Project",lessonLabel:"YOUR LESSON",closeLesson:"Close ✕",subjectMessage:"Welcome to",learningComing:"Learning content is coming soon!",subjectNames:{english:"English",math:"Mathematics",science:"Science",computer:"Computer Basics",gk:"General Knowledge"}},
+comingTitle:"More Languages Coming Soon!",comingDescription:"We are working to make learning accessible in more Indian languages. Stay tuned for future updates!",footerText:"Learning opportunities for every student.",footerRights:"Community Engagement Project",lessonLabel:"YOUR LESSON",closeLesson:"Close ✕",subjectMessage:"Welcome to",learningComing:"Learning content is coming soon!",subjectNames:{english:"English",math:"Mathematics",science:"Science",computer:"Computer Basics",gk:"General Knowledge",digital:"Mobile & Digital Skills"}},
 hi:{
 navHome:"होम",navAbout:"हमारे बारे में",navSubjects:"विषय",navQuiz:"प्रश्नोत्तरी",navCyber:"साइबर सुरक्षा",navSurvey:"छात्र सर्वेक्षण",
 heroBadge:"सीखें • खोजें • आगे बढ़ें",heroTitle:"आज सीखें, कल आगे बढ़ें!",heroDescription:"शिक्षा साथी में आपका स्वागत है। यह विद्यार्थियों को सीखने और आगे बढ़ने में मदद करने वाला एक डिजिटल शिक्षण मंच है।",heroButton:"सीखना शुरू करें →",heroNote:"सीखना अब सरल, सुलभ और आनंददायक।",heroCardTitle:"आपकी सीखने की यात्रा",heroCardText:"हर दिन कुछ नया सीखें।",
@@ -16,7 +16,7 @@ subjectsLabel:"सीखें और जानें",subjectsTitle:"अपन�
 quizLabel:"अपने ज्ञान की जाँच करें",quizTitle:"छोटी प्रश्नोत्तरी",quizQuestion:"CPU का पूरा नाम क्या है?",quizOption1:"Central Processing Unit",quizOption2:"Computer Personal Unit",quizOption3:"Central Program Unit",quizButton:"उत्तर जाँचें",quizSelect:"कृपया एक उत्तर चुनें।",quizCorrect:"🎉 सही उत्तर! बहुत बढ़िया!",quizWrong:"❌ गलत उत्तर। फिर से कोशिश करें!",
 cyberLabel:"इंटरनेट पर सुरक्षित रहें",cyberTitle:"साइबर सुरक्षा",cyberDescription:"इंटरनेट पर सुरक्षित रहने के लिए इन आसान सुझावों का पालन करें।",safety1:"🔐 अपना OTP या पासवर्ड किसी के साथ साझा न करें।",safety2:"🔗 संदिग्ध लिंक पर क्लिक न करें।",safety3:"🔑 मजबूत और अलग-अलग पासवर्ड रखें।",safety4:"🛡️ अपनी व्यक्तिगत जानकारी सुरक्षित रखें।",safety5:"🙋 ऑनलाइन समस्या होने पर किसी विश्वसनीय बड़े को बताएँ।",
 surveyLabel:"आपकी राय महत्वपूर्ण है",surveyTitle:"विद्यार्थी सीखने का सर्वेक्षण",surveyDescription:"अपना अनुभव साझा करें और शिक्षा साथी को बेहतर बनाने में हमारी मदद करें।",nameLabel:"आपका नाम",namePlaceholder:"अपना नाम लिखें",classLabel:"आपकी कक्षा",classPlaceholder:"अपनी कक्षा चुनें",otherClass:"अन्य",ratingLabel:"आपका सीखने का अनुभव कैसा रहा?",ratingPlaceholder:"अपना अनुभव चुनें",ratingExcellent:"बहुत अच्छा",ratingGood:"अच्छा",ratingAverage:"औसत",ratingNeedsImprovement:"सुधार की आवश्यकता है",suggestionLabel:"सुझाव (वैकल्पिक)",suggestionPlaceholder:"आप क्या सुधार चाहते हैं?",surveyButton:"सर्वेक्षण जमा करें",surveySuccess:"✅ धन्यवाद! ध्यान दें: यह डेमो आपके जवाबों को सेव या भेजता नहीं है।",surveyNote:"डेमो फ़ॉर्म: आपके जवाब अभी सेव या भेजे नहीं जाते।",
-comingTitle:"अन्य भाषाएँ जल्द आ रही हैं!",comingDescription:"हम अधिक भारतीय भाषाओं में शिक्षा उपलब्ध कराने पर काम कर रहे हैं। नए अपडेट के लिए जुड़े रहें!",footerText:"हर विद्यार्थी के लिए सीखने के अवसर।",footerRights:"सामुदायिक सहभागिता परियोजना",lessonLabel:"आपका पाठ",closeLesson:"बंद करें ✕",subjectMessage:"आपका स्वागत है:",learningComing:"शिक्षण सामग्री जल्द उपलब्ध होगी!",subjectNames:{english:"अंग्रेज़ी",math:"गणित",science:"विज्ञान",computer:"कंप्यूटर की मूल बातें",gk:"सामान्य ज्ञान"}},
+comingTitle:"अन्य भाषाएँ जल्द आ रही हैं!",comingDescription:"हम अधिक भारतीय भाषाओं में शिक्षा उपलब्ध कराने पर काम कर रहे हैं। नए अपडेट के लिए जुड़े रहें!",footerText:"हर विद्यार्थी के लिए सीखने के अवसर।",footerRights:"सामुदायिक सहभागिता परियोजना",lessonLabel:"आपका पाठ",closeLesson:"बंद करें ✕",subjectMessage:"आपका स्वागत है:",learningComing:"शिक्षण सामग्री जल्द उपलब्ध होगी!",subjectNames:{english:"अंग्रेज़ी",math:"गणित",science:"विज्ञान",computer:"कंप्यूटर की मूल बातें",gk:"सामान्य ज्ञान",digital:"मोबाइल और डिजिटल कौशल"}},
 mr:{
 navHome:"मुख्यपृष्ठ",navAbout:"आमच्याबद्दल",navSubjects:"विषय",navQuiz:"प्रश्नमंजुषा",navCyber:"सायबर सुरक्षा",navSurvey:"विद्यार्थी सर्वेक्षण",
 heroBadge:"शिका • शोधा • प्रगती करा",heroTitle:"आज शिका, उद्या प्रगती करा!",heroDescription:"शिक्षा साथीमध्ये आपले स्वागत आहे. विद्यार्थ्यांना शिकण्यासाठी आणि प्रगती करण्यासाठी मदत करणारे हे डिजिटल शैक्षणिक व्यासपीठ आहे.",heroButton:"शिकायला सुरुवात करा →",heroNote:"शिकणे आता सोपे, सुलभ आणि आनंददायी.",heroCardTitle:"तुमचा शिक्षण प्रवास",heroCardText:"दररोज काहीतरी नवीन शिका.",
@@ -25,10 +25,27 @@ subjectsLabel:"शिका आणि जाणून घ्या",subjectsTitl
 quizLabel:"तुमच्या ज्ञानाची चाचणी घ्या",quizTitle:"लघु प्रश्नमंजुषा",quizQuestion:"CPU चे पूर्ण नाव काय आहे?",quizOption1:"Central Processing Unit",quizOption2:"Computer Personal Unit",quizOption3:"Central Program Unit",quizButton:"उत्तर तपासा",quizSelect:"कृपया एक उत्तर निवडा.",quizCorrect:"🎉 बरोबर उत्तर! छान!",quizWrong:"❌ चुकीचे उत्तर. पुन्हा प्रयत्न करा!",
 cyberLabel:"इंटरनेटवर सुरक्षित राहा",cyberTitle:"सायबर सुरक्षा",cyberDescription:"इंटरनेटवर सुरक्षित राहण्यासाठी या सोप्या सूचनांचे पालन करा.",safety1:"🔐 तुमचा OTP किंवा पासवर्ड कोणालाही सांगू नका.",safety2:"🔗 संशयास्पद लिंकवर क्लिक करू नका.",safety3:"🔑 मजबूत आणि वेगवेगळे पासवर्ड वापरा.",safety4:"🛡️ तुमची वैयक्तिक माहिती सुरक्षित ठेवा.",safety5:"🙋 ऑनलाइन समस्या आल्यास विश्वासू मोठ्या व्यक्तीला सांगा.",
 surveyLabel:"तुमचे मत महत्त्वाचे आहे",surveyTitle:"विद्यार्थी शिक्षण सर्वेक्षण",surveyDescription:"तुमचा अनुभव सांगा आणि शिक्षा साथी अधिक चांगले बनवण्यासाठी मदत करा.",nameLabel:"तुमचे नाव",namePlaceholder:"तुमचे नाव लिहा",classLabel:"तुमचा वर्ग",classPlaceholder:"तुमचा वर्ग निवडा",otherClass:"इतर",ratingLabel:"तुमचा शिकण्याचा अनुभव कसा होता?",ratingPlaceholder:"तुमचा अनुभव निवडा",ratingExcellent:"उत्कृष्ट",ratingGood:"चांगला",ratingAverage:"सर्वसाधारण",ratingNeedsImprovement:"सुधारणेची गरज आहे",suggestionLabel:"सूचना (ऐच्छिक)",suggestionPlaceholder:"काय सुधारावे असे तुम्हाला वाटते?",surveyButton:"सर्वेक्षण सबमिट करा",surveySuccess:"✅ धन्यवाद! लक्षात घ्या: हा डेमो तुमची उत्तरे जतन किंवा पाठवत नाही.",surveyNote:"डेमो फॉर्म: तुमची उत्तरे अद्याप जतन किंवा पाठवली जात नाहीत.",
-comingTitle:"इतर भाषा लवकरच येत आहेत!",comingDescription:"अधिक भारतीय भाषांमध्ये शिक्षण उपलब्ध करून देण्यासाठी आम्ही काम करत आहोत. नवीन माहितीसाठी आमच्यासोबत राहा!",footerText:"प्रत्येक विद्यार्थ्यासाठी शिकण्याच्या संधी.",footerRights:"समुदाय सहभाग प्रकल्प",lessonLabel:"आजचा धडा",closeLesson:"बंद करा ✕",subjectMessage:"स्वागत आहे:",learningComing:"शैक्षणिक मजकूर लवकरच उपलब्ध होईल!",subjectNames:{english:"इंग्रजी",math:"गणित",science:"विज्ञान",computer:"संगणकाची मूलतत्त्वे",gk:"सामान्य ज्ञान"}}
+comingTitle:"इतर भाषा लवकरच येत आहेत!",comingDescription:"अधिक भारतीय भाषांमध्ये शिक्षण उपलब्ध करून देण्यासाठी आम्ही काम करत आहोत. नवीन माहितीसाठी आमच्यासोबत राहा!",footerText:"प्रत्येक विद्यार्थ्यासाठी शिकण्याच्या संधी.",footerRights:"समुदाय सहभाग प्रकल्प",lessonLabel:"आजचा धडा",closeLesson:"बंद करा ✕",subjectMessage:"स्वागत आहे:",learningComing:"शैक्षणिक मजकूर लवकरच उपलब्ध होईल!",subjectNames:{english:"इंग्रजी",math:"गणित",science:"विज्ञान",computer:"संगणकाची मूलतत्त्वे",gk:"सामान्य ज्ञान",digital:"मोबाईल आणि डिजिटल कौशल्ये"}}
 };
 
-let currentLanguage = "en";
+
+Object.assign(translations.en,{
+welcomeKicker:"A FRIENDLY PLACE TO LEARN",welcomeTitle:"Welcome to Shiksha Saathi",welcomeCopy:"Learn school subjects and everyday digital skills, one small step at a time.",chooseLanguage:"Choose your language",welcomeFootnote:"You can change the language any time from the top menu.",
+digitalTitle:"Mobile & Digital Skills",digitalDescription:"Learn everyday phone skills step by step.",quizDescription:"Choose a topic and answer 10 questions. Use Next and Previous to move between questions.",quizChoose:"Choose a topic:",listenLesson:"🔊 Listen to lesson",listenStop:"■ Stop audio",quizPrevious:"← Previous",quizNext:"Next →",quizSubmit:"Submit Quiz",quizRetry:"Try Again",quizUnanswered:"Please answer all 10 questions before submitting.",quizScore:"Your score",quizExcellent:"Excellent work!",quizGreat:"Great job! Keep practising.",quizGood:"Good effort. Keep learning!",quizKeep:"Keep learning and try again!",quizCorrectLabel:"Correct answer",quizExplanationLabel:"Explanation",quizAnswerPrompt:"Please choose an answer before moving on.",formFallback:"Form not showing?",formOpen:"Open the feedback form in a new tab",surveyDescription:"Please fill out this short form to share your learning experience and help us improve Shiksha Saathi.",comingTag:"More languages soon",
+safetyExample1:"Example: A caller says your bank account will be blocked unless you tell them an OTP. Stop and call your bank using its official number.",safetyExample2:"Example: A message promises a free phone or prize and asks you to click a strange link. Do not open it or share details.",safetyExample3:"Use a long passphrase with words, numbers and symbols. Do not reuse your banking password on other sites.",safetyExample4:"Do not post your address, school ID, bank details or live location publicly.",safetyExample5:"If someone pressures or threatens you online, save the message and ask a trusted adult for help."
+});
+Object.assign(translations.hi,{
+welcomeKicker:"सीखने की एक सरल जगह",welcomeTitle:"शिक्षा साथी में आपका स्वागत है",welcomeCopy:"स्कूल के विषय और मोबाइल चलाने के रोज़मर्रा के कौशल धीरे-धीरे सीखें।",chooseLanguage:"अपनी भाषा चुनें",welcomeFootnote:"आप ऊपर दिए गए मेनू से कभी भी भाषा बदल सकते हैं।",
+digitalTitle:"मोबाइल और डिजिटल कौशल",digitalDescription:"मोबाइल के रोज़मर्रा के काम चरण-दर-चरण सीखें।",quizDescription:"एक विषय चुनें और 10 प्रश्नों के उत्तर दें। प्रश्न बदलने के लिए आगे और पीछे के बटन इस्तेमाल करें।",quizChoose:"विषय चुनें:",listenLesson:"🔊 पाठ सुनें",listenStop:"■ ऑडियो रोकें",quizPrevious:"← पिछला",quizNext:"अगला →",quizSubmit:"प्रश्नोत्तरी जमा करें",quizRetry:"फिर से प्रयास करें",quizUnanswered:"जमा करने से पहले सभी 10 प्रश्नों के उत्तर दें।",quizScore:"आपका अंक",quizExcellent:"बहुत बढ़िया!",quizGreat:"शानदार! अभ्यास जारी रखें।",quizGood:"अच्छी कोशिश। सीखते रहें!",quizKeep:"सीखते रहें और फिर कोशिश करें!",quizCorrectLabel:"सही उत्तर",quizExplanationLabel:"व्याख्या",quizAnswerPrompt:"आगे बढ़ने से पहले एक उत्तर चुनें।",formFallback:"फ़ॉर्म नहीं दिख रहा?",formOpen:"फ़ीडबैक फ़ॉर्म नए टैब में खोलें",surveyDescription:"अपना अनुभव साझा करने और शिक्षा साथी को बेहतर बनाने के लिए यह छोटा फ़ॉर्म भरें।",comingTag:"अन्य भाषाएँ जल्द",
+safetyExample1:"उदाहरण: कोई फोन करके कहता है कि OTP नहीं बताया तो बैंक खाता बंद हो जाएगा। रुकें और बैंक के आधिकारिक नंबर पर संपर्क करें।",safetyExample2:"उदाहरण: कोई संदेश मुफ्त फोन या इनाम का लालच देकर अनजान लिंक खोलने को कहता है। लिंक न खोलें और जानकारी साझा न करें।",safetyExample3:"शब्दों, अंकों और चिन्हों वाला लंबा पासवर्ड रखें। बैंक वाला पासवर्ड दूसरी वेबसाइट पर न रखें।",safetyExample4:"अपना पता, स्कूल पहचान-पत्र, बैंक विवरण या लाइव लोकेशन सार्वजनिक न करें।",safetyExample5:"ऑनलाइन कोई परेशान या धमकाए तो संदेश सुरक्षित रखें और किसी भरोसेमंद बड़े से मदद लें।"
+});
+Object.assign(translations.mr,{
+welcomeKicker:"शिकण्यासाठी एक सोपी जागा",welcomeTitle:"शिक्षा साथीमध्ये आपले स्वागत आहे",welcomeCopy:"शालेय विषय आणि मोबाईलवरील रोजची कामे हळूहळू शिका.",chooseLanguage:"तुमची भाषा निवडा",welcomeFootnote:"वरच्या मेनूमधून तुम्ही कधीही भाषा बदलू शकता.",
+digitalTitle:"मोबाईल आणि डिजिटल कौशल्ये",digitalDescription:"मोबाईलवरील रोजची कामे टप्प्याटप्प्याने शिका.",quizDescription:"एक विषय निवडा आणि 10 प्रश्नांची उत्तरे द्या. प्रश्न बदलण्यासाठी पुढील आणि मागील बटणे वापरा.",quizChoose:"विषय निवडा:",listenLesson:"🔊 धडा ऐका",listenStop:"■ ऑडिओ थांबवा",quizPrevious:"← मागील",quizNext:"पुढील →",quizSubmit:"प्रश्नमंजुषा सबमिट करा",quizRetry:"पुन्हा प्रयत्न करा",quizUnanswered:"सबमिट करण्यापूर्वी सर्व 10 प्रश्नांची उत्तरे द्या.",quizScore:"तुमचे गुण",quizExcellent:"उत्कृष्ट!",quizGreat:"छान! सराव सुरू ठेवा.",quizGood:"चांगला प्रयत्न. शिकत राहा!",quizKeep:"शिकत राहा आणि पुन्हा प्रयत्न करा!",quizCorrectLabel:"योग्य उत्तर",quizExplanationLabel:"स्पष्टीकरण",quizAnswerPrompt:"पुढे जाण्यापूर्वी एक उत्तर निवडा.",formFallback:"फॉर्म दिसत नाही?",formOpen:"अभिप्राय फॉर्म नवीन टॅबमध्ये उघडा",surveyDescription:"तुमचा अनुभव सांगण्यासाठी आणि शिक्षा साथी सुधारण्यासाठी हा छोटा फॉर्म भरा.",comingTag:"इतर भाषा लवकरच",
+safetyExample1:"उदाहरण: कोणीतरी फोन करून OTP दिला नाही तर बँक खाते बंद होईल असे सांगते. थांबा आणि बँकेच्या अधिकृत क्रमांकावर संपर्क करा.",safetyExample2:"उदाहरण: मोफत फोन किंवा बक्षीस देण्याचे सांगणारा संदेश अनोळखी लिंक उघडायला सांगतो. लिंक उघडू नका आणि माहिती देऊ नका.",safetyExample3:"शब्द, अंक आणि चिन्हे असलेला लांब पासवर्ड वापरा. बँकेचा पासवर्ड इतर वेबसाइटवर वापरू नका.",safetyExample4:"तुमचा पत्ता, शाळेचे ओळखपत्र, बँक तपशील किंवा सध्याचे ठिकाण सार्वजनिक करू नका.",safetyExample5:"ऑनलाइन कोणी त्रास दिला किंवा धमकावले तर संदेश जतन करा आणि विश्वासू मोठ्या व्यक्तीची मदत घ्या。"
+});
+
+let currentLanguage = localStorage.getItem("shikshaSaathiLanguage") || "en";
 function applyLanguage(language) {
   currentLanguage = translations[language] ? language : "en";
   const words = translations[currentLanguage];
@@ -43,9 +60,23 @@ function applyLanguage(language) {
   });
   const result = document.getElementById("result");
   if (result.dataset.status) result.textContent = words[result.dataset.status];
-  document.getElementById("languageSelect").value = currentLanguage;
+  const selector = document.getElementById("languageSelect");
+  if (selector) selector.value = currentLanguage;
+  const welcome = document.getElementById("welcomeScreen");
+  if (welcome) welcome.hidden = localStorage.getItem("shikshaSaathiWelcomed") === "yes";
+  if (typeof showQuizQuestion === "function" && document.getElementById("quizTopic")) showQuizQuestion();
 }
-document.getElementById("languageSelect").addEventListener("change", event => applyLanguage(event.target.value));
+document.getElementById("languageSelect").addEventListener("change", event => {
+  localStorage.setItem("shikshaSaathiLanguage", event.target.value);
+  applyLanguage(event.target.value);
+});
+function chooseWelcomeLanguage(language) {
+  localStorage.setItem("shikshaSaathiLanguage", language);
+  localStorage.setItem("shikshaSaathiWelcomed", "yes");
+  applyLanguage(language);
+  document.getElementById("welcomeScreen").hidden = true;
+  document.getElementById("home").scrollIntoView({behavior:"smooth"});
+}
 
 function startLearning() {
   document.getElementById("subjects").scrollIntoView({behavior:"smooth"});
@@ -70,11 +101,35 @@ science:{title:"विज्ञान: जलचक्र",intro:"पाणी �
 computer:{title:"संगणकाची मूलतत्त्वे: संगणकाचे भाग",intro:"संगणक माहिती घेतो, तिच्यावर प्रक्रिया करतो, परिणाम दाखवतो आणि माहिती साठवू शकतो.",points:["इनपुट उपकरणे: कीबोर्ड, माऊस आणि मायक्रोफोन.","CPU सूचनांवर प्रक्रिया करतो; त्याला संगणकाचा मेंदू म्हणतात.","आउटपुट उपकरणे: मॉनिटर, स्पीकर आणि प्रिंटर.","साठवण उपकरणे: SSD, हार्ड ड्राइव्ह आणि USB ड्राइव्ह."],question:"सूचनांवर प्रक्रिया कोणता भाग करतो?",answer:"CPU (Central Processing Unit).",extra:"तुमच्या आसपास एक इनपुट आणि एक आउटपुट उपकरण शोधा."},
 gk:{title:"सामान्य ज्ञान: आपली सूर्यमाला",intro:"सूर्यमालेत सूर्य आणि त्याच्याभोवती फिरणाऱ्या वस्तूंचा समावेश होतो. यात आठ ग्रह आहेत.",points:["सूर्य हा सूर्यमालेच्या केंद्रातील तारा आहे.","आठ ग्रह: बुध, शुक्र, पृथ्वी, मंगळ, गुरू, शनी, अरुण आणि वरुण.","आपण पृथ्वीवर राहतो.","चंद्र हा पृथ्वीचा नैसर्गिक उपग्रह आहे."],question:"आपण कोणत्या ग्रहावर राहतो?",answer:"पृथ्वी.",extra:"सूर्यापासून जवळच्या ग्रहापासून सुरुवात करून ग्रहांची नावे क्रमाने सांगा."}}
 };
+
+lessons.en.digital={title:"Mobile Basics: Everyday Phone Skills",intro:"A smartphone can help you call family, find information and learn. Start slowly and ask a trusted person if you feel unsure.",points:["Connect to Wi-Fi: open Settings → Wi-Fi, choose a network you trust, and enter its password only when you have permission.","Search safely: open a browser or search app, type a simple question, and compare information from trusted sources.","Use YouTube for learning: search for a topic, check the channel, and avoid suspicious ads or links.","Keep your phone safe: use a screen lock, install updates, and do not share OTPs or passwords."],question:"What should you do if a stranger asks for your OTP?",answer:"Never share it. Stop the conversation and contact the official service if needed.",extra:"Practice opening Settings and finding the Wi-Fi option with a trusted person."};
+lessons.hi.digital={title:"मोबाइल की मूल बातें: रोज़मर्रा के काम",intro:"स्मार्टफोन से आप परिवार को कॉल कर सकते हैं, जानकारी खोज सकते हैं और सीख सकते हैं। धीरे-धीरे सीखें और संदेह होने पर भरोसेमंद व्यक्ति से मदद लें।",points:["Wi-Fi से जुड़ें: Settings → Wi-Fi खोलें, भरोसेमंद नेटवर्क चुनें और अनुमति होने पर ही उसका पासवर्ड डालें।","सुरक्षित खोज: ब्राउज़र या सर्च ऐप खोलें, आसान सवाल लिखें और भरोसेमंद स्रोतों से जानकारी जाँचें।","YouTube से सीखें: विषय खोजें, चैनल जाँचें और संदिग्ध विज्ञापनों या लिंक से बचें।","फोन सुरक्षित रखें: स्क्रीन लॉक लगाएँ, अपडेट करें और OTP या पासवर्ड साझा न करें।"],question:"कोई अनजान व्यक्ति OTP माँगे तो क्या करें?",answer:"OTP कभी साझा न करें। बातचीत रोकें और ज़रूरत पड़ने पर आधिकारिक सेवा से संपर्क करें।",extra:"किसी भरोसेमंद व्यक्ति के साथ Settings खोलकर Wi-Fi विकल्प ढूँढ़ने का अभ्यास करें।"};
+lessons.mr.digital={title:"मोबाईलची मूलतत्त्वे: रोजची कामे",intro:"स्मार्टफोनने तुम्ही कुटुंबाला फोन करू शकता, माहिती शोधू शकता आणि शिकू शकता. हळूहळू शिका आणि शंका असल्यास विश्वासू व्यक्तीची मदत घ्या.",points:["Wi-Fi जोडा: Settings → Wi-Fi उघडा, विश्वासू नेटवर्क निवडा आणि परवानगी असल्यासच पासवर्ड टाका.","सुरक्षित शोध: ब्राउझर किंवा शोध अॅप उघडा, सोपा प्रश्न लिहा आणि विश्वासू स्रोतांमधून माहिती तपासा.","YouTube वर शिका: विषय शोधा, चॅनेल तपासा आणि संशयास्पद जाहिराती किंवा लिंक टाळा.","फोन सुरक्षित ठेवा: स्क्रीन लॉक लावा, अपडेट करा आणि OTP किंवा पासवर्ड शेअर करू नका."],question:"अनोळखी व्यक्तीने OTP मागितला तर काय कराल?",answer:"OTP कधीही सांगू नका. संभाषण थांबवा आणि गरज असल्यास अधिकृत सेवेशी संपर्क करा.",extra:"विश्वासू व्यक्तीसोबत Settings उघडून Wi-Fi पर्याय शोधण्याचा सराव करा."};
+
+let currentLessonForAudio = null;
+function speakCurrentLesson() {
+  const button = document.querySelector(".audio-btn");
+  if (!("speechSynthesis" in window)) { alert(translations[currentLanguage].audioUnsupported || "Audio is not supported."); return; }
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    if (button) button.textContent = translations[currentLanguage].listenLesson;
+    return;
+  }
+  if (!currentLessonForAudio) return;
+  const speech = new SpeechSynthesisUtterance([currentLessonForAudio.title,currentLessonForAudio.intro,currentLessonForAudio.points.join(". "),currentLessonForAudio.question,currentLessonForAudio.answer].join(". "));
+  speech.lang = currentLanguage === "hi" ? "hi-IN" : currentLanguage === "mr" ? "mr-IN" : "en-IN";
+  speech.rate = 0.85;
+  speech.onend = () => { if(button) button.textContent = translations[currentLanguage].listenLesson; };
+  speech.onerror = () => { if(button) button.textContent = translations[currentLanguage].listenLesson; };
+  if (button) button.textContent = translations[currentLanguage].listenStop;
+  window.speechSynthesis.speak(speech);
+}
 function openLessons(subject) {
   const languageLessons = lessons[currentLanguage] || lessons.en;
   const lesson = languageLessons[subject] || lessons.en[subject];
   const area = document.getElementById("lessonArea");
   const words = translations[currentLanguage];
+  currentLessonForAudio = lesson;
   document.getElementById("lessonTitle").textContent = lesson.title;
   document.getElementById("lessonContent").innerHTML = "";
   const intro = document.createElement("article");
@@ -113,7 +168,7 @@ function openLessons(subject) {
   area.hidden = false;
   area.scrollIntoView({behavior:"smooth", block:"start"});
 }
-function closeLessons() { document.getElementById("lessonArea").hidden = true; }
+function closeLessons() { document.getElementById("lessonArea").hidden = true; if ("speechSynthesis" in window) window.speechSynthesis.cancel(); }
 const quizBank = {
   computer: [
     {q:"What is the full form of CPU?",options:["Central Processing Unit","Computer Personal Unit","Central Program Utility","Control Power Unit"],answer:0},
