@@ -8,6 +8,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section id="welcomeScreen" class="welcome-screen" aria-labelledby="welcomeTitle">
+    <div class="welcome-card">
+      <div class="welcome-mark" aria-hidden="true">📚</div>
+      <p class="welcome-kicker" data-i18n="welcomeKicker">A FRIENDLY PLACE TO LEARN</p>
+      <h1 id="welcomeTitle" data-i18n="welcomeTitle">Welcome to Shiksha Saathi</h1>
+      <p class="welcome-copy" data-i18n="welcomeCopy">Learn school subjects and everyday digital skills, one small step at a time.</p>
+      <h2 data-i18n="chooseLanguage">Choose your language</h2>
+      <div class="welcome-languages">
+        <button type="button" onclick="chooseWelcomeLanguage('hi')" class="language-card"><span>नमस्ते</span><strong>हिंदी</strong><small>Hindi</small></button>
+        <button type="button" onclick="chooseWelcomeLanguage('mr')" class="language-card"><span>नमस्कार</span><strong>मराठी</strong><small>Marathi</small></button>
+        <button type="button" onclick="chooseWelcomeLanguage('en')" class="language-card"><span>Hello</span><strong>English</strong><small>English</small></button>
+      </div>
+      <p class="welcome-footnote" data-i18n="welcomeFootnote">You can change the language any time from the top menu.</p>
+    </div>
+  </section>
   <header class="header">
     <a href="#home" class="logo">📚 Shiksha Saathi</a>
     <nav class="navbar" aria-label="Main navigation">
@@ -57,11 +72,12 @@
         <article class="card"><div class="card-icon">🔬</div><h3 data-i18n="scienceTitle">Science</h3><p data-i18n="scienceDescription">Discover the world around you.</p><button onclick="openLessons('science')" data-i18n="startButton">Explore →</button></article>
         <article class="card"><div class="card-icon">💻</div><h3 data-i18n="computerTitle">Computer Basics</h3><p data-i18n="computerDescription">Understand computers and technology.</p><button onclick="openLessons('computer')" data-i18n="startButton">Explore →</button></article>
         <article class="card"><div class="card-icon">🌍</div><h3 data-i18n="gkTitle">General Knowledge</h3><p data-i18n="gkDescription">Discover interesting facts about the world.</p><button onclick="openLessons('gk')" data-i18n="startButton">Explore →</button></article>
+        <article class="card"><div class="card-icon">📱</div><h3 data-i18n="digitalTitle">Mobile & Digital Skills</h3><p data-i18n="digitalDescription">Learn everyday phone skills step by step.</p><button onclick="openLessons('digital')" data-i18n="startButton">Explore →</button></article>
       </div>
       <div id="lessonArea" class="lesson-area" hidden aria-live="polite">
         <div class="lesson-heading">
           <div><span class="section-label" data-i18n="lessonLabel">YOUR LESSON</span><h2 id="lessonTitle">Lesson</h2></div>
-          <button class="close-lesson" type="button" onclick="closeLessons()" data-i18n="closeLesson">Close ✕</button>
+          <div class="lesson-actions"><button class="audio-btn" type="button" onclick="speakCurrentLesson()" data-i18n="listenLesson">🔊 Listen to lesson</button><button class="close-lesson" type="button" onclick="closeLessons()" data-i18n="closeLesson">Close ✕</button></div>
         </div>
         <div id="lessonContent" class="lesson-content"></div>
       </div>
@@ -70,9 +86,9 @@
     <section id="quiz" class="section">
       <span class="section-label" data-i18n="quizLabel">TEST YOUR KNOWLEDGE</span>
       <h2 data-i18n="quizTitle">Practice Quizzes</h2>
-      <p class="section-description">Choose a topic and answer 10 questions. Use Next and Previous to move between questions.</p>
+      <p class="section-description" data-i18n="quizDescription">Choose a topic and answer 10 questions. Use Next and Previous to move between questions.</p>
       <div class="quiz-picker">
-        <label for="quizTopic">Choose Quiz:</label>
+        <label for="quizTopic" data-i18n="quizChoose">Choose a topic:</label>
         <select id="quizTopic" onchange="renderQuiz()">
           <option value="computer">Computer Basics</option>
           <option value="science">Science</option>
@@ -96,18 +112,18 @@
       <h2 data-i18n="cyberTitle">Cyber Safety</h2>
       <p class="section-description" data-i18n="cyberDescription">Follow these simple tips to stay safe on the internet.</p>
       <div class="safety-list">
-        <p data-i18n="safety1">🔐 Never share your OTP or password.</p>
-        <p data-i18n="safety2">🔗 Avoid clicking suspicious links.</p>
-        <p data-i18n="safety3">🔑 Use strong and unique passwords.</p>
-        <p data-i18n="safety4">🛡️ Keep your personal information private.</p>
-        <p data-i18n="safety5">🙋 Report online problems to a trusted adult.</p>
+        <article class="safety-tip"><h3 data-i18n="safety1">🔐 Never share your OTP or password.</h3><p data-i18n="safetyExample1">Example: A caller says your bank account will be blocked unless you tell them an OTP. Stop and call your bank using its official number.</p></article>
+        <article class="safety-tip"><h3 data-i18n="safety2">🔗 Avoid clicking suspicious links.</h3><p data-i18n="safetyExample2">Example: A message promises a free phone or prize and asks you to click a strange link. Do not open it or share details.</p></article>
+        <article class="safety-tip"><h3 data-i18n="safety3">🔑 Use strong and unique passwords.</h3><p data-i18n="safetyExample3">Use a long passphrase with words, numbers and symbols. Do not reuse your banking password on other sites.</p></article>
+        <article class="safety-tip"><h3 data-i18n="safety4">🛡️ Keep your personal information private.</h3><p data-i18n="safetyExample4">Do not post your address, school ID, bank details or live location publicly.</p></article>
+        <article class="safety-tip"><h3 data-i18n="safety5">🙋 Report online problems to a trusted adult.</h3><p data-i18n="safetyExample5">If someone pressures or threatens you online, save the message and ask a trusted adult for help.</p></article>
       </div>
     </section>
 
     <section id="survey" class="section">
       <span class="section-label" data-i18n="surveyLabel">YOUR VOICE MATTERS</span>
       <h2 data-i18n="surveyTitle">Student Feedback & Survey</h2>
-      <p class="section-description">Please fill out this short form to share your learning experience and help us improve Shiksha Saathi.</p>
+      <p class="section-description" data-i18n="surveyDescription">Please fill out this short form to share your learning experience and help us improve Shiksha Saathi.</p>
       <div class="google-form-wrap">
         <iframe
           src="https://docs.google.com/forms/d/e/1FAIpQLSdRjUPxu8RryLniLmlGqrQ_KxvnOaSVJFWEdGUlfrsRULHL4w/viewform?embedded=true"
@@ -121,12 +137,10 @@
           Loading feedback form…
         </iframe>
       </div>
-      <p class="form-fallback">Form not showing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRjUPxu8RryLniLmlGqrQ_KxvnOaSVJFWEdGUlfrsRULHL4w/viewform" target="_blank" rel="noopener noreferrer">Open the feedback form in a new tab</a>.</p>
+      <p class="form-fallback"><span data-i18n="formFallback">Form not showing?</span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRjUPxu8RryLniLmlGqrQ_KxvnOaSVJFWEdGUlfrsRULHL4w/viewform" target="_blank" rel="noopener noreferrer" data-i18n="formOpen">Open the feedback form in a new tab</a>.</p>
     </section>
 
-    <section class="coming-soon">
-      <h2>Coming Soon</h2>
-    </section>
+    <section class="coming-soon"><div class="coming-soon-icon" aria-hidden="true">🌱</div><h2 data-i18n="comingTitle">More Languages Coming Soon!</h2><p data-i18n="comingDescription">We are working to make learning accessible in more Indian languages.</p><div class="language-tags"><span>हिंदी</span><span>मराठी</span><span>English</span><span data-i18n="comingTag">More languages soon</span></div></section>
   </main>
 
   <footer class="footer">
