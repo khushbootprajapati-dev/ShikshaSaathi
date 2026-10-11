@@ -70,6 +70,7 @@ function applyLanguage(language) {
   const welcome = document.getElementById("welcomeScreen");
   if (welcome) welcome.hidden = localStorage.getItem("shikshaSaathiWelcomed") === "yes";
   if (typeof showQuizQuestion === "function" && document.getElementById("quizTopic")) showQuizQuestion();
+  if (typeof renderProgress === "function") renderProgress();
 }
 document.getElementById("languageSelect").addEventListener("change", event => {
   localStorage.setItem("shikshaSaathiLanguage", event.target.value);
