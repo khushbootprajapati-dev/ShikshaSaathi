@@ -183,6 +183,7 @@ let currentQuizAnswers = {};
 function renderQuiz() {
   currentQuizQuestion = 0;
   currentQuizAnswers = {};
+  document.getElementById("submitQuizBtn").disabled = false;
   showQuizQuestion();
 }
 
