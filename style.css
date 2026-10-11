@@ -63,3 +63,13 @@ section{padding:72px 8%}
 .form-fallback{margin:18px auto 0;color:#64748b;font-size:14px}
 .form-fallback a{color:#4f46e5;font-weight:700;text-decoration:underline}
 @media(max-width:600px){.google-form-wrap{margin:24px -8px 0;padding:4px;border-radius:14px}.google-form-wrap iframe{min-height:1200px}}
+
+
+/* One-question-at-a-time quiz navigation */
+.quiz-progress{font-weight:700;color:#4338ca;background:#eef2ff;border-radius:10px;padding:10px 14px;display:inline-block;margin:8px 0}
+.quiz-navigation{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.quiz-navigation button{margin-top:0;min-height:44px}
+.quiz-navigation .secondary-btn{background:#fff;color:#4338ca;border:1px solid #c7d2fe;padding:12px 20px;border-radius:12px;cursor:pointer;font-weight:700}
+.quiz-navigation .secondary-btn:disabled{opacity:.5;cursor:not-allowed}
+.quiz-navigation button[hidden]{display:none}
+@media(max-width:480px){.quiz-navigation button{flex:1}}
