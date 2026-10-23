@@ -341,7 +341,7 @@ function checkQuiz() {
   const result = document.getElementById("result");
   if (unanswered > 0) {
     result.textContent = (words.quizUnanswered || "Please answer all questions before submitting.") + " (" + unanswered + ")";
-    result.dataset.score = "";
+    delete result.dataset.score;
     return;
   }
   const score = bank.reduce((sum, item, index) => sum + (currentQuizAnswers[index] === item.answer ? 1 : 0), 0);
