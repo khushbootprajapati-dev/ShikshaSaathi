@@ -58,10 +58,10 @@ Object.assign(translations.en,{topicComputer:"Computer Basics",topicScience:"Sci
 Object.assign(translations.hi,{topicComputer:"कंप्यूटर की मूल बातें",topicScience:"विज्ञान",topicMath:"गणित",topicEnglish:"अंग्रेज़ी व्याकरण",topicGk:"सामान्य ज्ञान"});
 Object.assign(translations.mr,{topicComputer:"संगणकाची मूलतत्त्वे",topicScience:"विज्ञान",topicMath:"गणित",topicEnglish:"इंग्रजी व्याकरण",topicGk:"सामान्य ज्ञान"});
 
-let currentLanguage = localStorage.getItem("shikshaSaathiLanguage") || "en";
+let currentLessonSubject = null;\nlet currentLanguage = localStorage.getItem("shikshaSaathiLanguage") || "en";
 function applyLanguage(language) {
   currentLanguage = translations[language] ? language : "en";
-  const words = translations[currentLanguage];
+  const words = translations[currentLanguage] || translations.en;
   document.documentElement.lang = currentLanguage;
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.dataset.i18n;
@@ -71,14 +71,32 @@ function applyLanguage(language) {
     const key = element.dataset.i18nPlaceholder;
     if (typeof words[key] === "string") element.placeholder = words[key];
   });
-  const result = document.getElementById("result");
-  if (result.dataset.status) result.textContent = words[result.dataset.status];
   const selector = document.getElementById("languageSelect");
   if (selector) selector.value = currentLanguage;
   const welcome = document.getElementById("welcomeScreen");
   if (welcome) welcome.hidden = localStorage.getItem("shikshaSaathiWelcomed") === "yes";
-  if (typeof showQuizQuestion === "function" && document.getElementById("quizTopic")) showQuizQuestion();
-  if (typeof renderProgress === "function") renderProgress();
+
+  // Re-render the open lesson so its title, explanation and practice answer
+  // follow the selected language without losing the student's place.
+  const lessonArea = document.getElementById("lessonArea");
+  if (lessonArea && !lessonArea.hidden && currentLessonSubject) {
+    openLessons(currentLessonSubject, true);
+  }
+  // Keep completed quiz feedback visible when the language changes.
+  const submitButton = document.getElementById("submitQuizBtn");
+  if (submitButton && document.getElementById("quizTopic")) {
+    if (submitButton.disabled && document.getElementById("result").dataset.score !== undefined) {
+      renderQuizReview();
+      const topic = document.getElementById("quizTopic").value;
+      const bank = quizBank[topic] || [];
+      const score = Number(document.getElementById("result").dataset.score);
+      const praise = score === bank.length ? words.quizExcellent : score >= 7 ? words.quizGreat : score >= 4 ? words.quizGood : words.quizKeep;
+      document.getElementById("result").textContent = (words.quizScore || "Your score") + ": " + score + " / " + bank.length + " — " + praise;
+    } else {
+      showQuizQuestion();
+    }
+  }
+  if (typeof renderLearningProgress === "function") renderLearningProgress();
 }
 document.getElementById("languageSelect").addEventListener("change", event => {
   localStorage.setItem("shikshaSaathiLanguage", event.target.value);
@@ -138,7 +156,7 @@ function speakCurrentLesson() {
   if (button) button.textContent = translations[currentLanguage].listenStop;
   window.speechSynthesis.speak(speech);
 }
-function openLessons(subject) {
+function openLessons(subject, preserveScroll = false) {\n  currentLessonSubject = subject;
   const languageLessons = lessons[currentLanguage] || lessons.en;
   const lesson = languageLessons[subject] || lessons.en[subject];
   const area = document.getElementById("lessonArea");
@@ -317,25 +335,27 @@ function previousQuestion() {
 
 function checkQuiz() {
   const topic = document.getElementById("quizTopic").value;
-  const questions = quizBank[topic];
+  const bank = quizBank[topic] || [];
+  const words = translations[currentLanguage] || translations.en;
+  const unanswered = bank.length - Object.keys(currentQuizAnswers).length;
   const result = document.getElementById("result");
-  const unanswered = questions.length - Object.keys(currentQuizAnswers).length;
   if (unanswered > 0) {
-    result.textContent = "Please answer all 10 questions before submitting. You have " + unanswered + " unanswered.";
-    result.dataset.status = "";
+    result.textContent = (words.quizUnanswered || "Please answer all questions before submitting.") + " (" + unanswered + ")";
+    result.dataset.score = "";
     return;
   }
-  const score = questions.reduce((total, item, index) =>
-    total + (currentQuizAnswers[index] === item.answer ? 1 : 0), 0);
-  result.textContent = "Your score: " + score + " / " + questions.length +
-    (score === questions.length ? " — Excellent work!" :
-     score >= 7 ? " — Great job! Keep practising." :
-     score >= 4 ? " — Good effort. Keep learning!" :
-     " — Keep learning and try again!");
-  result.dataset.status = score === questions.length ? "quizCorrect" : "quizWrong";
+  const score = bank.reduce((sum, item, index) => sum + (currentQuizAnswers[index] === item.answer ? 1 : 0), 0);
+  const praise = score === bank.length ? words.quizExcellent : score >= 7 ? words.quizGreat : score >= 4 ? words.quizGood : words.quizKeep;
+  result.textContent = (words.quizScore || "Your score") + ": " + score + " / " + bank.length + " — " + praise;
+  result.dataset.score = String(score);
+  const data = readLearningProgress();
+  data.scores.push({topic, score, total:bank.length, date:new Date().toISOString()});
+  if (data.scores.length > 50) data.scores = data.scores.slice(-50);
+  updateLearningProgress(data);
   document.getElementById("submitQuizBtn").disabled = true;
   document.getElementById("nextQuizBtn").hidden = true;
   document.getElementById("previousQuizBtn").disabled = true;
+  renderQuizReview();
 }
 
 
@@ -453,8 +473,28 @@ const localizedQuizPrompts={"computer":[["कंप्यूटर का CPU �
 const localizedQuizOptions={"Central Processing Unit":["सेंट्रल प्रोसेसिंग यूनिट","सेंट्रल प्रोसेसिंग युनिट"],"Computer Personal Unit":["कंप्यूटर पर्सनल यूनिट","कॉम्प्युटर पर्सनल युनिट"],"Central Program Utility":["सेंट्रल प्रोग्राम यूटिलिटी","सेंट्रल प्रोग्राम युटिलिटी"],"Control Power Unit":["कंट्रोल पावर यूनिट","कंट्रोल पॉवर युनिट"],"Monitor":["मॉनिटर","मॉनिटर"],"Keyboard":["कीबोर्ड","कीबोर्ड"],"Speaker":["स्पीकर","स्पीकर"],"Printer":["प्रिंटर","प्रिंटर"],"Mouse":["माउस","माऊस"],"Microphone":["माइक्रोफ़ोन","मायक्रोफोन"],"Scanner":["स्कैनर","स्कॅनर"],"Projector":["प्रोजेक्टर","प्रोजेक्टर"],"Webcam":["वेबकैम","वेबकॅम"],"Joystick":["जॉयस्टिक","जॉयस्टिक"],"CPU fan":["CPU पंखा","CPU फॅन"],"Plotter":["प्लॉटर","प्लॉटर"],"Only play music":["केवल संगीत चलाना","फक्त संगीत वाजवणे"],"Process data and information":["डेटा और जानकारी संसाधित करना","माहिती आणि डेटावर प्रक्रिया करणे"],"Only print pages":["केवल पेज प्रिंट करना","फक्त पाने छापणे"],"Only make calls":["केवल कॉल करना","फक्त फोन करणे"],"USB flash drive":["USB फ्लैश ड्राइव","USB फ्लॅश ड्राइव्ह"],"Mouse pad":["माउस पैड","माऊस पॅड"],"Windows operating system":["Windows ऑपरेटिंग सिस्टम","Windows ऑपरेटिंग सिस्टीम"],"Venus":["शुक्र","शुक्र"],"Mars":["मंगल","मंगळ"],"Jupiter":["बृहस्पति","गुरू"],"Mercury":["बुध","बुध"],"Oxygen":["ऑक्सीजन","ऑक्सिजन"],"Nitrogen":["नाइट्रोजन","नायट्रोजन"],"Carbon dioxide":["कार्बन डाइऑक्साइड","कार्बन डायऑक्साइड"],"Hydrogen":["हाइड्रोजन","हायड्रोजन"],"Lungs":["फेफड़े","फुफ्फुसे"],"Brain":["दिमाग","मेंदू"],"Heart":["हृदय","हृदय"],"Stomach":["पेट","पोट"],"Helium":["हीलियम","हेलियम"],"Methane":["मीथेन","मिथेन"],"Digestion":["पाचन","पचन"],"Photosynthesis":["प्रकाश संश्लेषण","प्रकाशसंश्लेषण"],"Evaporation":["वाष्पीकरण","बाष्पीभवन"],"Respiration":["श्वसन","श्वसन"],"Gas":["गैस","वायू"],"Liquid":["तरल","द्रव"],"Solid":["ठोस","घन"],"Vapour":["वाष्प","वाफ"],"Magnetism":["चुंबकत्व","चुंबकत्व"],"Gravity":["गुरुत्वाकर्षण","गुरुत्वाकर्षण"],"Friction":["घर्षण","घर्षण"],"Electricity":["बिजली","वीज"],"The Sun":["सूर्य","सूर्य"],"The Moon":["चंद्रमा","चंद्र"],"Flower":["फूल","फूल"],"Leaf":["पत्ती","पान"],"Root":["जड़","मूळ"],"Fruit":["फल","फळ"],"Atlantic Ocean":["अटलांटिक महासागर","अटलांटिक महासागर"],"Indian Ocean":["हिंद महासागर","हिंदी महासागर"],"Arctic Ocean":["आर्कटिक महासागर","आर्क्टिक महासागर"],"Pacific Ocean":["प्रशांत महासागर","प्रशांत महासागर"],"New Delhi":["नई दिल्ली","नवी दिल्ली"],"Mumbai":["मुंबई","मुंबई"],"Kolkata":["कोलकाता","कोलकाता"],"Chennai":["चेन्नई","चेन्नई"],"Lion":["शेर","सिंह"],"Elephant":["हाथी","हत्ती"],"Bengal tiger":["बंगाल टाइगर","बंगाल वाघ"],"Leopard":["तेंदुआ","बिबट्या"],"Holi":["होली","होळी"],"Diwali":["दिवाली","दिवाळी"],"Eid":["ईद","ईद"],"Pongal":["पोंगल","पोंगल"],"Sirius":["सीरियस","सिरियस"],"Polaris":["पोलारिस","ध्रुवतारा"],"Alpha Centauri":["अल्फा सेंटॉरी","अल्फा सेंटॉरी"],"Europe":["यूरोप","युरोप"],"Asia":["एशिया","आशिया"],"Africa":["अफ्रीका","आफ्रिका"],"South America":["दक्षिण अमेरिका","दक्षिण अमेरिका"],"Hockey":["हॉकी","हॉकी"],"Football":["फुटबॉल","फुटबॉल"],"Cricket":["क्रिकेट","क्रिकेट"],"Badminton":["बैडमिंटन","बॅडमिंटन"],"Beautiful":["सुंदर","सुंदर"],"Quickly":["जल्दी","लवकर"],"School":["स्कूल","शाळा"],"Jump":["कूदना","उडी मारणे"],"Childs":["गलत: Childs","चुकीचे: Childs"],"Childes":["गलत: Childes","चुकीचे: Childes"],"Children":["बच्चे","मुले"],"Childrens":["गलत: Childrens","चुकीचे: Childrens"],"She go to school.":["वह स्कूल जाता है (गलत)","ती शाळेत जातो (चुकीचे)"],"She goes to school.":["वह स्कूल जाती है","ती शाळेत जाते"],"She going school.":["वह स्कूल जाना (गलत)","ती शाळा जाणे (चुकीचे)"],"She gone to school.":["वह स्कूल गई हुआ (गलत)","ती शाळेत गेले (चुकीचे)"],"blue":["नीला","निळे"],"sky":["आकाश","आकाश"],"Plays":["खेलता है","खेळतो"],"Playing":["खेल रहा है","खेळत आहे"],"Played":["खेला","खेळला"],"Will play":["खेलेगा","खेळेल"],"Soon":["जल्द","लवकर"],"Late":["देर","उशिरा"],"Quick":["तेज़","जलद"],"First":["पहला","पहिला"],"Table":["मेज़","टेबल"],"They":["वे","ते"],"Happy":["खुश","आनंदी"],"Write":["लिखना","लिहिणे"],"Beautifull":["गलत वर्तनी: Beautifull","चुकीचे: Beautifull"],"Beutiful":["गलत वर्तनी: Beutiful","चुकीचे: Beutiful"],"Beautifal":["गलत वर्तनी: Beautifal","चुकीचे: Beautifal"],"Full stop (.)":["पूर्ण विराम (.)","पूर्णविराम (.)"],"Comma (,)":["अल्पविराम (,)","स्वल्पविराम (,)"],"Question mark (?)":["प्रश्नवाचक चिह्न (?)","प्रश्नचिन्ह (?)"],"Colon (:)":["कोलन (:)","द्विबिंदू (:)"],"Riya":["रिया","रिया"],"runs":["दौड़ती है","धावते"],"fast":["तेज़","जलद"],"sentence":["वाक्य","वाक्य"],"a":["एक","एक"],"in":["में","मध्ये"],"10 cm":["10 सेमी","10 सेमी"],"15 cm":["15 सेमी","15 सेमी"],"20 cm":["20 सेमी","20 सेमी"],"25 cm":["25 सेमी","25 सेमी"]};
 const progressKey="shikshaSaathiProgressV2";
 function readLearningProgress(){try{return JSON.parse(localStorage.getItem(progressKey))||{lessons:[],scores:[]}}catch(e){return {lessons:[],scores:[]}}}
-function updateLearningProgress(data){localStorage.setItem(progressKey,JSON.stringify(data));renderLearningProgress()}
-function localizedItem(topic,index,item){if(currentLanguage==="en")return item;const li=currentLanguage==="hi"?0:1;const prompt=localizedQuizPrompts[topic][index][li];return {...item,q:prompt,options:item.options.map(o=>localizedQuizOptions[o]?.[li]||o)}}
+function updateLearningProgress(data) {
+  try {
+    localStorage.setItem(progressKey, JSON.stringify(data));
+  } catch (error) {
+    console.warn("Shiksha Saathi could not save progress in this browser.", error);
+  }
+  renderLearningProgress();
+}
+function localizedItem(topic,index,item) {
+  if (currentLanguage === "en") return item;
+  const languageIndex = currentLanguage === "hi" ? 0 : 1;
+  const prompts = localizedQuizPrompts[topic] || [];
+  const prompt = prompts[index] && prompts[index][languageIndex];
+  return {
+    ...item,
+    q: prompt || item.q,
+    options: item.options.map(option => {
+      const localized = localizedQuizOptions[option];
+      return localized && localized[languageIndex] ? localized[languageIndex] : option;
+    })
+  };
+}
 function renderLearningProgress(){
  const box=document.getElementById("completedLessonsCount");if(!box)return;const d=readLearningProgress(),w=translations[currentLanguage]||translations.en;
  box.textContent=d.lessons.length;document.getElementById("quizzesTakenCount").textContent=d.scores.length;
