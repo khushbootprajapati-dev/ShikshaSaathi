@@ -157,7 +157,8 @@ function speakCurrentLesson() {
   if (button) button.textContent = translations[currentLanguage].listenStop;
   window.speechSynthesis.speak(speech);
 }
-function openLessons(subject, preserveScroll = false) {\n  currentLessonSubject = subject;
+function openLessons(subject, preserveScroll = false) {
+  currentLessonSubject = subject;
   const languageLessons = lessons[currentLanguage] || lessons.en;
   const lesson = languageLessons[subject] || lessons.en[subject];
   const area = document.getElementById("lessonArea");
