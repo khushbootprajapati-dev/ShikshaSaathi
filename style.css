@@ -112,3 +112,20 @@ button{min-height:44px}
 .mark-complete-btn{margin-top:16px;min-height:44px}.student-testing{margin:18px 0;padding:16px;border-left:4px solid #6366f1;background:#eef2ff;color:#3730a3;border-radius:10px;line-height:1.6}
 .quiz-explanation p{margin:6px 0;line-height:1.6}.quiz-option{display:flex;align-items:flex-start;gap:9px;min-height:44px;padding:12px}.quiz-option input{margin-top:4px;flex:0 0 auto}button,a,select{touch-action:manipulation}
 @media(max-width:640px){.progress-stats{grid-template-columns:1fr}.progress-lists{grid-template-columns:1fr}.progress-heading .secondary-btn{width:100%}.progress-stat{padding:14px}.quiz-navigation{gap:8px}.quiz-navigation button{flex:1;min-width:110px}.section{padding-left:16px;padding-right:16px}.student-testing{font-size:14px}}
+
+
+/* Final usability refinements: readable cards, touch targets and narrow screens */
+:root{color-scheme:light}
+body{overflow-wrap:break-word}
+button,a,select{-webkit-tap-highlight-color:transparent}
+.card button:focus-visible,.primary-btn:focus-visible,.secondary-btn:focus-visible,.audio-btn:focus-visible,.close-lesson:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+.card button,.audio-btn,.close-lesson,.secondary-btn{min-height:44px}
+.lesson-content p,.lesson-content li,.safety-tip p{overflow-wrap:anywhere}
+.progress-panel{width:calc(100% - 32px)}
+.google-form-wrap iframe{max-width:100%}
+@media(max-width:640px){
+.header{gap:10px}.logo{font-size:20px}.navbar{width:100%;gap:6px}.navbar a{padding:6px 7px;font-size:13px}
+#languageSelect{max-width:100%;min-height:44px}.hero-illustration{min-width:0;padding:26px 18px}.card{padding:22px 18px}
+.lesson-heading{flex-direction:column}.progress-panel{margin:16px auto}.google-form-wrap iframe{min-height:1250px}
+}
+@media(prefers-reduced-motion:reduce){.card:hover,.primary-btn:hover,.language-card:hover{transform:none;box-shadow:none}}
