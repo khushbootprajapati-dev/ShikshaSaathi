@@ -535,9 +535,9 @@ function renderQuizReview(){
  const retry=document.createElement("button");retry.type="button";retry.className="primary-btn";retry.textContent=w.quizRetry;retry.addEventListener("click",renderQuiz);c.appendChild(retry);
 }
 function checkQuiz(){
- const topic=document.getElementById("quizTopic").value,bank=quizBank[topic]||[],w=translations[currentLanguage]||translations.en,unanswered=bank.length-Object.keys(currentQuizAnswers).length;
- if(unanswered>0){document.getElementById("result").textContent=(w.quizUnanswered||"Answer all questions before submitting.")+" ("+unanswered+")";return}
- const score=bank.reduce((sum,x,i)=>sum+(currentQuizAnswers[i]===x.answer?1:0),0),result=document.getElementById("result"),praise=score===bank.length?w.quizExcellent:score>=7?w.quizGreat:score>=4?w.quizGood:w.quizKeep;
+ const topic=document.getElementById("quizTopic").value,bank=quizBank[topic]||[],w=translations[currentLanguage]||translations.en,unanswered=bank.length-Object.keys(currentQuizAnswers).length,result=document.getElementById("result");
+ if(unanswered>0){delete result.dataset.score;result.textContent=(w.quizUnanswered||"Answer all questions before submitting.")+" ("+unanswered+")";return}
+ const score=bank.reduce((sum,x,i)=>sum+(currentQuizAnswers[i]===x.answer?1:0),0),praise=score===bank.length?w.quizExcellent:score>=7?w.quizGreat:score>=4?w.quizGood:w.quizKeep;
  result.textContent=(w.quizScore||"Your score")+": "+score+" / "+bank.length+" — "+praise;result.dataset.score=String(score);
  const d=readLearningProgress();d.scores.push({topic,score,total:bank.length,date:new Date().toISOString()});if(d.scores.length>50)d.scores=d.scores.slice(-50);updateLearningProgress(d);
  document.getElementById("submitQuizBtn").disabled=true;document.getElementById("nextQuizBtn").hidden=true;document.getElementById("previousQuizBtn").disabled=true;renderQuizReview();
