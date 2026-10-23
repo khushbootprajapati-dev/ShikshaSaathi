@@ -58,7 +58,8 @@ Object.assign(translations.en,{topicComputer:"Computer Basics",topicScience:"Sci
 Object.assign(translations.hi,{topicComputer:"कंप्यूटर की मूल बातें",topicScience:"विज्ञान",topicMath:"गणित",topicEnglish:"अंग्रेज़ी व्याकरण",topicGk:"सामान्य ज्ञान"});
 Object.assign(translations.mr,{topicComputer:"संगणकाची मूलतत्त्वे",topicScience:"विज्ञान",topicMath:"गणित",topicEnglish:"इंग्रजी व्याकरण",topicGk:"सामान्य ज्ञान"});
 
-let currentLessonSubject = null;\nlet currentLanguage = localStorage.getItem("shikshaSaathiLanguage") || "en";
+let currentLessonSubject = null;
+let currentLanguage = localStorage.getItem("shikshaSaathiLanguage") || "en";
 function applyLanguage(language) {
   currentLanguage = translations[language] ? language : "en";
   const words = translations[currentLanguage] || translations.en;
