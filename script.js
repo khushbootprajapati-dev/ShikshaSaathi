@@ -544,6 +544,7 @@ function renderLearningProgress(){
  document.getElementById("averageScore").textContent=d.scores.length?Math.round(d.scores.reduce((a,x)=>a+x.score/x.total*100,0)/d.scores.length)+"%":"—";
  const ll=document.getElementById("completedLessonsList");ll.innerHTML="";if(!d.lessons.length){const li=document.createElement("li");li.textContent=w.noLessons;ll.appendChild(li)}
  d.lessons.slice().reverse().forEach(k=>{const li=document.createElement("li");const subject=k.split(":")[0];const names=(translations[currentLanguage].subjectNames||translations.en.subjectNames);li.textContent=(names[subject]||subject)+" — "+(currentLanguage==="hi"?"पूरा हुआ":currentLanguage==="mr"?"पूर्ण":"Completed");ll.appendChild(li)});
+ renderAchievements();
  const sl=document.getElementById("recentScoresList");sl.innerHTML="";if(!d.scores.length){const li=document.createElement("li");li.textContent=w.noScores;sl.appendChild(li)}
  d.scores.slice(-5).reverse().forEach(x=>{const li=document.createElement("li");const topicNames={computer:{en:"Computer Basics",hi:"कंप्यूटर",mr:"संगणक"},science:{en:"Science",hi:"विज्ञान",mr:"विज्ञान"},math:{en:"Mathematics",hi:"गणित",mr:"गणित"},english:{en:"English Grammar",hi:"अंग्रेज़ी व्याकरण",mr:"इंग्रजी व्याकरण"},gk:{en:"General Knowledge",hi:"सामान्य ज्ञान",mr:"सामान्य ज्ञान"},digital:{en:"Mobile & Digital Skills",hi:"मोबाइल और डिजिटल कौशल",mr:"मोबाईल आणि डिजिटल कौशल्ये"},cyber:{en:"Cyber Safety",hi:"साइबर सुरक्षा",mr:"सायबर सुरक्षा"}};li.textContent=topicNames[x.topic][currentLanguage]+": "+x.score+"/"+x.total+" ("+Math.round(x.score/x.total*100)+"%)";sl.appendChild(li)});
 }
@@ -588,3 +589,54 @@ function checkQuiz(){
 applyLanguage(currentLanguage);
 renderQuiz();
 renderLearningProgress();
+
+
+Object.assign(translations.en,{
+ learningStarsLabel:"Learning stars earned",subjectJourney:"Subject journey",achievementsTitle:"🏆 Your achievements",achievementsIntro:"Badges unlock from your real learning activity.",quickChallenge:"🎯 Quick challenge",certificateTitle:"Learning certificate",certificateLocked:"Complete all 7 subject lessons to unlock your certificate.",certificateReady:"You completed all 7 subject lessons. Your certificate is ready!",printCertificate:"Print certificate",badgeFirstLesson:"First Step",badgeFirstLessonDesc:"Complete your first lesson.",badgeThreeLessons:"Curious Learner",badgeThreeLessonsDesc:"Complete 3 subject lessons.",badgeAllLessons:"Learning Champion",badgeAllLessonsDesc:"Complete all 7 subject lessons.",badgeFirstQuiz:"Quiz Starter",badgeFirstQuizDesc:"Submit your first quiz.",badgeFiveQuizzes:"Quiz Explorer",badgeFiveQuizzesDesc:"Submit 5 quizzes.",badgeHighScore:"Bright Mind",badgeHighScoreDesc:"Score at least 80% in a quiz.",certificateHeading:"Certificate of Learning",certificateAward:"This certificate is proudly presented to",certificateCompletion:"for completing all seven learning subject lessons on Shiksha Saathi.",certificateDate:"Date"
+});
+Object.assign(translations.hi,{
+ learningStarsLabel:"अर्जित सीखने के सितारे",subjectJourney:"विषयों की सीखने की यात्रा",achievementsTitle:"🏆 आपकी उपलब्धियाँ",achievementsIntro:"बैज आपकी वास्तविक सीखने की गतिविधि से मिलते हैं।",quickChallenge:"🎯 त्वरित चुनौती",certificateTitle:"सीखने का प्रमाणपत्र",certificateLocked:"प्रमाणपत्र पाने के लिए सभी 7 विषयों के पाठ पूरे करें।",certificateReady:"आपने सभी 7 विषयों के पाठ पूरे कर लिए हैं। प्रमाणपत्र तैयार है!",printCertificate:"प्रमाणपत्र प्रिंट करें",badgeFirstLesson:"पहला कदम",badgeFirstLessonDesc:"अपना पहला पाठ पूरा करें।",badgeThreeLessons:"जिज्ञासु विद्यार्थी",badgeThreeLessonsDesc:"3 विषयों के पाठ पूरे करें।",badgeAllLessons:"लर्निंग चैंपियन",badgeAllLessonsDesc:"सभी 7 विषयों के पाठ पूरे करें।",badgeFirstQuiz:"क्विज़ की शुरुआत",badgeFirstQuizDesc:"अपनी पहली क्विज़ जमा करें।",badgeFiveQuizzes:"क्विज़ खोजकर्ता",badgeFiveQuizzesDesc:"5 क्विज़ जमा करें।",badgeHighScore:"तेज़ दिमाग",badgeHighScoreDesc:"किसी क्विज़ में कम से कम 80% अंक पाएँ।",certificateHeading:"सीखने का प्रमाणपत्र",certificateAward:"यह प्रमाणपत्र सम्मानपूर्वक प्रदान किया जाता है",certificateCompletion:"शिक्षा साथी पर सभी सात विषयों के पाठ पूरे करने के लिए।",certificateDate:"तारीख"
+});
+Object.assign(translations.mr,{
+ learningStarsLabel:"मिळवलेले अध्ययन तारे",subjectJourney:"विषयांनुसार अध्ययन प्रवास",achievementsTitle:"🏆 तुमची यशचिन्हे",achievementsIntro:"तुमच्या प्रत्यक्ष अध्ययनावर आधारित बॅज मिळतात.",quickChallenge:"🎯 झटपट आव्हान",certificateTitle:"अध्ययन प्रमाणपत्र",certificateLocked:"प्रमाणपत्र मिळवण्यासाठी सर्व 7 विषयांचे धडे पूर्ण करा.",certificateReady:"तुम्ही सर्व 7 विषयांचे धडे पूर्ण केले आहेत. प्रमाणपत्र तयार आहे!",printCertificate:"प्रमाणपत्र प्रिंट करा",badgeFirstLesson:"पहिले पाऊल",badgeFirstLessonDesc:"तुमचा पहिला धडा पूर्ण करा.",badgeThreeLessons:"जिज्ञासू विद्यार्थी",badgeThreeLessonsDesc:"3 विषयांचे धडे पूर्ण करा.",badgeAllLessons:"अध्ययन चॅम्पियन",badgeAllLessonsDesc:"सर्व 7 विषयांचे धडे पूर्ण करा.",badgeFirstQuiz:"क्विझची सुरुवात",badgeFirstQuizDesc:"तुमची पहिली क्विझ सबमिट करा.",badgeFiveQuizzes:"क्विझ एक्सप्लोरर",badgeFiveQuizzesDesc:"5 क्विझ सबमिट करा.",badgeHighScore:"हुशार विद्यार्थी",badgeHighScoreDesc:"एखाद्या क्विझमध्ये किमान 80% गुण मिळवा.",certificateHeading:"अध्ययन प्रमाणपत्र",certificateAward:"हे प्रमाणपत्र सन्मानपूर्वक प्रदान करण्यात येत आहे",certificateCompletion:"शिक्षा साथीवरील सर्व सात विषयांचे धडे पूर्ण केल्याबद्दल.",certificateDate:"दिनांक"
+});
+
+
+function renderAchievements(){
+ const data=readLearningProgress(),count=data.lessons.length,quizCount=data.scores.length;
+ const correct=data.scores.reduce((sum,x)=>sum+(Number(x.score)||0),0);
+ const stars=count*10+correct;
+ const best=data.scores.reduce((max,x)=>Math.max(max,Number(x.score||0)/Math.max(1,Number(x.total||10))*100),0);
+ const done=count>=7,words=translations[currentLanguage]||translations.en;
+ const bar=document.getElementById("subjectProgressBar"),text=document.getElementById("subjectProgressText");
+ if(bar){bar.style.width=Math.min(100,count/7*100)+"%";bar.setAttribute("aria-valuenow",String(Math.min(7,count)))}
+ if(text)text.textContent=Math.min(count,7)+" / 7";
+ const starBox=document.getElementById("learningStars");if(starBox)starBox.textContent=stars+" ⭐";
+ const badges=[
+  ["🌱","badgeFirstLesson","badgeFirstLessonDesc",count>=1],
+  ["🔎","badgeThreeLessons","badgeThreeLessonsDesc",count>=3],
+  ["🏆","badgeAllLessons","badgeAllLessonsDesc",done],
+  ["✏️","badgeFirstQuiz","badgeFirstQuizDesc",quizCount>=1],
+  ["🎯","badgeFiveQuizzes","badgeFiveQuizzesDesc",quizCount>=5],
+  ["⭐","badgeHighScore","badgeHighScoreDesc",best>=80]
+ ];
+ const grid=document.getElementById("achievementBadges");
+ if(grid){grid.innerHTML="";badges.forEach(([icon,title,desc,earned])=>{const card=document.createElement("article");card.className="achievement-badge "+(earned?"earned":"locked");const symbol=document.createElement("span");symbol.className="badge-icon";symbol.textContent=earned?icon:"🔒";const heading=document.createElement("strong");heading.textContent=words[title];const detail=document.createElement("small");detail.textContent=words[desc];card.append(symbol,heading,detail);grid.appendChild(card)})}
+ const certificate=document.getElementById("certificateButton"),status=document.getElementById("certificateStatus");
+ if(certificate)certificate.disabled=!done;
+ if(status)status.textContent=done?words.certificateReady:words.certificateLocked;
+}
+function startQuickChallenge(){
+ const topics=["english","math","science","computer","gk","digital","cyber"];
+ const topic=topics[Math.floor(Math.random()*topics.length)];
+ const selector=document.getElementById("quizTopic");if(selector)selector.value=topic;
+ renderQuiz();document.getElementById("quiz").scrollIntoView({behavior:"smooth"});
+}
+function printLearningCertificate(){
+ const data=readLearningProgress();if(data.lessons.length<7){alert(translations[currentLanguage].certificateLocked);return}
+ const words=translations[currentLanguage]||translations.en;
+ const page=window.open("","_blank","width=900,height=700");if(!page){alert(currentLanguage==="hi"?"प्रमाणपत्र खोलने के लिए पॉप-अप की अनुमति दें।":currentLanguage==="mr"?"प्रमाणपत्र उघडण्यासाठी पॉप-अपला परवानगी द्या.":"Please allow pop-ups to print your certificate.");return}
+ const date=new Date().toLocaleDateString(currentLanguage==="hi"?"hi-IN":currentLanguage==="mr"?"mr-IN":"en-IN");
+ page.document.write("<!doctype html><html lang='"+currentLanguage+"'><head><meta charset='utf-8'><title>"+words.certificateHeading+"</title><style>body{font-family:Georgia,serif;background:#f1f5f9;padding:35px;color:#172554}.certificate{max-width:850px;margin:30px auto;padding:65px 45px;background:white;border:12px double #244b83;text-align:center}.mark{font-size:48px}h1{font-size:38px;color:#1e3a8a}p{font-size:20px;line-height:1.7}.date{margin-top:45px;font-size:16px}@media print{body{background:white;padding:0}.certificate{margin:0;min-height:75vh}}</style></head><body><main class='certificate'><div class='mark'>📚 ⭐</div><h1>"+words.certificateHeading+"</h1><p>"+words.certificateAward+"</p><h2>____________________________</h2><p>"+words.certificateCompletion+"</p><p class='date'>"+words.certificateDate+": "+date+"</p></main><script>window.onload=()=>window.print()<\/script></body></html>");
+ page.document.close();
+}
