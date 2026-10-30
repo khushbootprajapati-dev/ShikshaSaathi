@@ -271,6 +271,31 @@ const quizBank = {
     {q:"Which continent is India part of?",options:["Europe","Asia","Africa","South America"],answer:1},
     {q:"Which sport uses a bat, ball and wickets?",options:["Hockey","Football","Cricket","Badminton"],answer:2}
   ]
+,
+  digital: [
+    {q:"Which setting connects a phone to a trusted wireless network?",options:["Bluetooth","Wi-Fi","Airplane mode","Torch"],answer:1},
+    {q:"What should you do before installing a new app?",options:["Check its source and permissions","Share your password","Turn off all updates","Install every pop-up"],answer:0},
+    {q:"Which action helps protect a smartphone?",options:["Leaving it unlocked","Using a screen lock","Sharing the PIN","Ignoring updates"],answer:1},
+    {q:"What is a web browser used for?",options:["Browsing websites","Charging a phone","Printing money","Cleaning the screen"],answer:0},
+    {q:"Which is a safe way to search for information?",options:["Open every unknown link","Trust every result","Use reliable sources and compare information","Share personal details"],answer:2},
+    {q:"What does an app update often provide?",options:["Security fixes and improvements","A new phone battery","Free mobile data","A new SIM card"],answer:0},
+    {q:"Which tool is commonly used to make a video call?",options:["Calculator","Camera or video-call app","File bin","Alarm clock"],answer:1},
+    {q:"What should you do when using public Wi-Fi?",options:["Access sensitive accounts without care","Share passwords with others","Avoid sensitive transactions on unknown networks","Turn off the screen lock"],answer:2},
+    {q:"Where should important files be saved as a backup?",options:["Only in a temporary message","In a trusted backup location","In an unknown public folder","Nowhere"],answer:1},
+    {q:"What should you do if an app asks for an unrelated permission?",options:["Allow everything","Review it and deny unnecessary access","Share your OTP","Disable the phone lock"],answer:1}
+  ],
+  cyber: [
+    {q:"What should you do if someone asks for your OTP?",options:["Share it quickly","Post it online","Never share it","Send it to a stranger"],answer:2},
+    {q:"Which message is a warning sign of a possible scam?",options:["A message from a known teacher","An unexpected prize link asking for personal details","A saved family contact","A school timetable"],answer:1},
+    {q:"Which password is the strongest choice?",options:["12345678","yourname","password","A long, unique passphrase"],answer:3},
+    {q:"What should you do if someone bullies you online?",options:["Reply with threats","Keep evidence and tell a trusted adult","Share their private details","Keep it secret"],answer:1},
+    {q:"Which information should you avoid posting publicly?",options:["A favourite school subject","A general hobby","Your home address and live location","A book review"],answer:2},
+    {q:"How can you check whether a website is safer to use?",options:["Check the web address and use trusted official sites","Trust a prize pop-up","Click shortened links from strangers","Ignore browser warnings"],answer:0},
+    {q:"What is two-factor authentication designed to do?",options:["Make passwords public","Add another verification step","Remove account protection","Share an account with everyone"],answer:1},
+    {q:"What should you do with an unexpected attachment from an unknown sender?",options:["Open it immediately","Forward it to friends","Avoid opening it and ask a trusted adult","Enter your password"],answer:2},
+    {q:"What is a respectful action in an online group?",options:["Send hurtful comments","Share rumours","Respect others and protect their privacy","Post someone's photo without permission"],answer:2},
+    {q:"If you think an account has been accessed by someone else, what should you do?",options:["Ignore it","Tell a trusted adult and use the official account recovery steps","Send your password to a stranger","Reuse the same password everywhere"],answer:1}
+  ]
 };
 
 let currentQuizQuestion = 0;
