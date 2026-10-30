@@ -195,3 +195,35 @@ body{background:#061735;color:#eaf2ff}
   font-weight: 500;
   line-height: 1.5;
 }
+
+
+/* Learning rewards, real progress and motion polish */
+.progress-stat{transition:transform .22s ease,box-shadow .22s ease}
+.progress-stat:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(96,165,250,.12)}
+.journey-progress{margin:20px 0;padding:18px 20px;background:#102a52;border:1px solid #31527e;border-radius:16px;color:#eaf2ff}
+.journey-progress-top{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}
+.journey-track{height:12px;background:#071b3d;border-radius:99px;overflow:hidden}
+.journey-fill{height:100%;width:0;background:linear-gradient(90deg,#38bdf8,#818cf8,#a78bfa);border-radius:99px;transition:width .6s ease}
+.achievement-area{margin:22px 0}
+.achievement-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.achievement-heading h3,.certificate-row h3{color:#f8fbff;font-size:19px}
+.achievement-heading p,.certificate-row p{color:#c5d5ee;font-size:14px}
+.achievement-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px}
+.achievement-badge{padding:16px 12px;text-align:center;background:#102a52;border:1px solid #31527e;border-radius:15px;transition:transform .2s,border-color .2s}
+.achievement-badge.earned{background:linear-gradient(145deg,#163b70,#17366a);border-color:#60a5fa;box-shadow:0 8px 22px rgba(59,130,246,.12)}
+.achievement-badge .badge-icon{font-size:30px;display:block;margin-bottom:6px}
+.achievement-badge strong{display:block;color:#f8fbff;font-size:14px}
+.achievement-badge small{display:block;color:#c5d5ee;margin-top:5px;font-size:12px}
+.achievement-badge.locked{opacity:.55;filter:saturate(.45)}
+.certificate-row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:22px 0;padding:18px 20px;background:#102a52;border:1px solid #31527e;border-radius:16px}
+.certificate-row .primary-btn{margin:0}
+.certificate-row button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.5)}
+.card{animation:cardEnter .55s both}
+.card:nth-child(2){animation-delay:.05s}.card:nth-child(3){animation-delay:.1s}.card:nth-child(4){animation-delay:.15s}.card:nth-child(5){animation-delay:.2s}.card:nth-child(6){animation-delay:.25s}.card:nth-child(7){animation-delay:.3s}
+.hero-illustration{animation:floatBook 5s ease-in-out infinite}
+.book-icon{animation:bookBob 3.5s ease-in-out infinite}
+@keyframes floatBook{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(1deg)}}
+@keyframes bookBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes cardEnter{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){.achievement-heading,.certificate-row{align-items:stretch}.achievement-heading .secondary-btn,.certificate-row button{width:100%}.achievement-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.hero-illustration,.book-icon,.card{animation:none!important}.journey-fill{transition:none}}
