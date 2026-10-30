@@ -129,3 +129,34 @@ button,a,select{-webkit-tap-highlight-color:transparent}
 .lesson-heading{flex-direction:column}.progress-panel{margin:16px auto}.google-form-wrap iframe{min-height:1250px}
 }
 @media(prefers-reduced-motion:reduce){.card:hover,.primary-btn:hover,.language-card:hover{transform:none;box-shadow:none}}
+
+
+/* Dark navy site background theme */
+:root{color-scheme:dark}
+body{background:#061735;color:#eaf2ff}
+.header{background:#071b3d;box-shadow:0 3px 20px rgba(0,0,0,.24)}
+.logo,.navbar a{color:#eaf2ff}
+.navbar a:hover{color:#93c5fd}
+#languageSelect{background:#102a52;color:#f8fbff;border-color:#31527e}
+.hero{background:linear-gradient(135deg,#071b3d,#0b2d5c 55%,#102b63)}
+.hero h1,.section h2{color:#f8fbff}
+.hero-content>p,.hero-content .hero-note,.section-description{color:#c5d5ee}
+.badge,.section-label{background:#163b70;color:#bfdbfe}
+.section-light{background:#081d40}
+.coming-soon{background:linear-gradient(135deg,#071b3d,#102b58)}
+.coming-soon h2{color:#f8fbff}
+.coming-soon>p{color:#c5d5ee}
+.language-tags span{background:#102a52;color:#dbeafe;border-color:#31527e}
+.progress-panel{background:linear-gradient(135deg,#0a2147,#102b58);border-color:#31527e}
+.progress-heading p,.progress-note{color:#c5d5ee}
+.progress-lists>div,.progress-stat{background:#102a52;border-color:#31527e}
+.progress-lists h3,.progress-lists li,.progress-stat span{color:#eaf2ff}
+.progress-stat strong{color:#93c5fd}
+.welcome-screen{background:radial-gradient(circle at 15% 15%,#123d72 0,transparent 35%),radial-gradient(circle at 85% 85%,#172b68 0,transparent 38%),linear-gradient(135deg,#061735,#0b2450)}
+.welcome-card{background:#0d2852;border-color:#31527e}
+.welcome-kicker,.welcome-card h2{color:#bfdbfe}
+.welcome-card h1{color:#f8fbff}
+.welcome-copy,.welcome-footnote{color:#c5d5ee}
+.language-card{background:#102f60;border-color:#31527e;color:#f8fbff}
+.language-card small{color:#c5d5ee}
+@media(prefers-reduced-motion:reduce){.card:hover,.primary-btn:hover,.language-card:hover{transform:none}}
