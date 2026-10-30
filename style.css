@@ -160,3 +160,38 @@ body{background:#061735;color:#eaf2ff}
 .language-card{background:#102f60;border-color:#31527e;color:#f8fbff}
 .language-card small{color:#c5d5ee}
 @media(prefers-reduced-motion:reduce){.card:hover,.primary-btn:hover,.language-card:hover{transform:none}}
+
+
+/* Quiz readability fix: dark text on light answer cards */
+.quiz-question-card,
+.quiz-question-card h3,
+.quiz-question-card .quiz-option,
+.quiz-question-card .quiz-option span,
+.quiz-question-card .quiz-option label {
+  color: #172554 !important;
+}
+.quiz-question-card .quiz-option {
+  background: #ffffff;
+  border-color: #cbd5e1;
+}
+.quiz-question-card .quiz-option:hover {
+  background: #eff6ff;
+  border-color: #6479c8;
+}
+.quiz-question-card .quiz-option:has(input:checked) {
+  background: #e0eaff;
+  border-color: #3b5ccc;
+}
+.quiz-question-card .quiz-option input {
+  accent-color: #1d4ed8;
+}
+.quiz-picker label {
+  color: #eaf2ff !important;
+}
+#quizProgress {
+  color: #1e3a8a;
+}
+#quizQuestions .quiz-option {
+  font-weight: 500;
+  line-height: 1.5;
+}
