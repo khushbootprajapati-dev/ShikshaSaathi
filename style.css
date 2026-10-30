@@ -30,7 +30,7 @@ section{padding:72px 8%}
 .survey-form input:focus,.survey-form select:focus,.survey-form textarea:focus{border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,.1)}.survey-form textarea{resize:vertical;min-height:110px}.survey-form .primary-btn{width:100%}#surveyMessage{text-align:center}.form-note{font-size:12px;color:#64748b;text-align:center;margin-top:12px}
 .coming-soon{text-align:center;padding:55px 8%;background:linear-gradient(135deg,#eef2ff,#f5f3ff)}.coming-soon-icon{font-size:48px;margin-bottom:12px}.coming-soon h2{font-size:30px;color:#312e81;margin-bottom:12px}.coming-soon>p{max-width:650px;margin:0 auto;color:#64748b}
 .language-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}.language-tags span{padding:7px 15px;border-radius:30px;background:#fff;color:#4338ca;border:1px solid #e0e7ff;font-weight:600}
-.footer{text-align:center;background:#172554;color:#fff;padding:30px 15px}.footer h3{margin-bottom:8px}.footer p{font-size:13px;color:#cbd5e1;margin-top:7px}
+.footer{text-align:center;background:#ffffff;color:#172554;padding:30px 15px;border-top:1px solid #e2e8f0}.footer h3{margin-bottom:8px;color:#172554}.footer p{font-size:13px;color:#475569;margin-top:7px}
 @media(max-width:850px){.header{justify-content:center}.navbar{gap:12px}.hero{flex-direction:column;text-align:center}.hero-content>p{margin:auto}.hero-illustration{width:100%;max-width:350px}}
 @media(max-width:600px){section{padding:48px 5%}.header{padding:15px 4%}.navbar{gap:10px}.navbar a{font-size:12px}.hero h1{font-size:36px}.content-box,.survey-form{padding:20px}.coming-soon h2{font-size:25px}}
 
