@@ -585,12 +585,6 @@ function checkQuiz(){
  document.getElementById("submitQuizBtn").disabled=true;document.getElementById("nextQuizBtn").hidden=true;document.getElementById("previousQuizBtn").disabled=true;renderQuizReview();
 }
 
-// Initialize after all translation and progress helpers are ready.
-applyLanguage(currentLanguage);
-renderQuiz();
-renderLearningProgress();
-
-
 Object.assign(translations.en,{
  learningStarsLabel:"Learning stars earned",subjectJourney:"Subject journey",achievementsTitle:"🏆 Your achievements",achievementsIntro:"Badges unlock from your real learning activity.",quickChallenge:"🎯 Quick challenge",certificateTitle:"Learning certificate",certificateLocked:"Complete all 7 subject lessons to unlock your certificate.",certificateReady:"You completed all 7 subject lessons. Your certificate is ready!",printCertificate:"Print certificate",badgeFirstLesson:"First Step",badgeFirstLessonDesc:"Complete your first lesson.",badgeThreeLessons:"Curious Learner",badgeThreeLessonsDesc:"Complete 3 subject lessons.",badgeAllLessons:"Learning Champion",badgeAllLessonsDesc:"Complete all 7 subject lessons.",badgeFirstQuiz:"Quiz Starter",badgeFirstQuizDesc:"Submit your first quiz.",badgeFiveQuizzes:"Quiz Explorer",badgeFiveQuizzesDesc:"Submit 5 quizzes.",badgeHighScore:"Bright Mind",badgeHighScoreDesc:"Score at least 80% in a quiz.",certificateHeading:"Certificate of Learning",certificateAward:"This certificate is proudly presented to",certificateCompletion:"for completing all seven learning subject lessons on Shiksha Saathi.",certificateDate:"Date"
 });
@@ -600,6 +594,14 @@ Object.assign(translations.hi,{
 Object.assign(translations.mr,{
  learningStarsLabel:"मिळवलेले अध्ययन तारे",subjectJourney:"विषयांनुसार अध्ययन प्रवास",achievementsTitle:"🏆 तुमची यशचिन्हे",achievementsIntro:"तुमच्या प्रत्यक्ष अध्ययनावर आधारित बॅज मिळतात.",quickChallenge:"🎯 झटपट आव्हान",certificateTitle:"अध्ययन प्रमाणपत्र",certificateLocked:"प्रमाणपत्र मिळवण्यासाठी सर्व 7 विषयांचे धडे पूर्ण करा.",certificateReady:"तुम्ही सर्व 7 विषयांचे धडे पूर्ण केले आहेत. प्रमाणपत्र तयार आहे!",printCertificate:"प्रमाणपत्र प्रिंट करा",badgeFirstLesson:"पहिले पाऊल",badgeFirstLessonDesc:"तुमचा पहिला धडा पूर्ण करा.",badgeThreeLessons:"जिज्ञासू विद्यार्थी",badgeThreeLessonsDesc:"3 विषयांचे धडे पूर्ण करा.",badgeAllLessons:"अध्ययन चॅम्पियन",badgeAllLessonsDesc:"सर्व 7 विषयांचे धडे पूर्ण करा.",badgeFirstQuiz:"क्विझची सुरुवात",badgeFirstQuizDesc:"तुमची पहिली क्विझ सबमिट करा.",badgeFiveQuizzes:"क्विझ एक्सप्लोरर",badgeFiveQuizzesDesc:"5 क्विझ सबमिट करा.",badgeHighScore:"हुशार विद्यार्थी",badgeHighScoreDesc:"एखाद्या क्विझमध्ये किमान 80% गुण मिळवा.",certificateHeading:"अध्ययन प्रमाणपत्र",certificateAward:"हे प्रमाणपत्र सन्मानपूर्वक प्रदान करण्यात येत आहे",certificateCompletion:"शिक्षा साथीवरील सर्व सात विषयांचे धडे पूर्ण केल्याबद्दल.",certificateDate:"दिनांक"
 });
+
+// Initialize after all translation and progress helpers are ready.
+applyLanguage(currentLanguage);
+renderQuiz();
+renderLearningProgress();
+
+
+
 
 
 function renderAchievements(){
